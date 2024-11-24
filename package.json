@@ -14,16 +14,19 @@
     "test": "turbo test",
     "analyze": "turbo analyze",
     "bump-deps": "npx npm-check-updates --deep -u -x react-day-picker && pnpm install",
-    "migrate": "cd packages/database && npx prisma format && npx prisma generate && npx prisma db push"
+    "migrate": "packages/database && npx prisma format && npx prisma generate && npx prisma db push",
+    "migrate-dev": "export DATABASE_URL=file:./dev/db.sqlite && cd packages/database && npx prisma format && npx prisma generate && npx prisma db push"
   },
   "devDependencies": {
     "@auto-it/all-contributors": "^11.3.0",
     "@auto-it/first-time-contributor": "^11.3.0",
     "@biomejs/biome": "1.9.4",
     "@repo/typescript-config": "workspace:*",
+    "prisma": "5.22.0",
     "turbo": "^2.3.0",
     "typescript": "^5.6.3",
-    "ultracite": "^4.1.6"
+    "ultracite": "^4.1.6",
+    "vitest": "^2.1.5"
   },
   "engines": {
     "node": ">=18"

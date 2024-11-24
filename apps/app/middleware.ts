@@ -1,6 +1,6 @@
 import { authMiddleware } from '@repo/auth/middleware';
 
-export default authMiddleware();
+export default authMiddleware;
 
 export const config = {
   matcher: [

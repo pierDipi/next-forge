@@ -1,59 +1,37 @@
-import { auth, currentUser } from '@repo/auth/server';
-import { SidebarProvider } from '@repo/design-system/components/ui/sidebar';
-import { showBetaFeature } from '@repo/feature-flags';
-import arcjet, { detectBot, request } from '@repo/security';
-import type { ReactNode } from 'react';
-import { PostHogIdentifier } from './components/posthog-identifier';
-import { GlobalSidebar } from './components/sidebar';
+import {auth, currentUser} from '@repo/auth';
+import {SidebarProvider} from '@repo/design-system/components/ui/sidebar';
+import {showBetaFeature} from '@repo/feature-flags';
+import type {ReactNode} from 'react';
+import {PostHogIdentifier} from './components/posthog-identifier';
+import {redirect} from "next/navigation";
 
 type AppLayoutProperties = {
-  readonly children: ReactNode;
+    readonly children: ReactNode;
 };
 
-const aj = arcjet.withRule(
-  detectBot({
-    mode: 'LIVE',
-    // Allow preview links to show OG images, but no other bots should be
-    // allowed. See https://docs.arcjet.com/bot-protection/identifying-bots
-    allow: ['CATEGORY:PREVIEW'],
-  })
-);
+const AppLayout = async ({children}: AppLayoutProperties) => {
 
-const AppLayout = async ({ children }: AppLayoutProperties) => {
-  const req = await request();
-  const decision = await aj.protect(req);
+    const authenticated = await auth();
+    const user = await currentUser();
 
-  // These errors are handled by the global error boundary, but you could also
-  // redirect or show a custom error page
-  if (decision.isDenied()) {
-    if (decision.reason.isBot()) {
-      throw new Error('No bots allowed');
+    if (!user || !authenticated) {
+        return redirect('/sign-in');
     }
 
-    throw new Error('Access denied');
-  }
+    const betaFeature = await showBetaFeature();
 
-  const user = await currentUser();
-  const { redirectToSignIn } = await auth();
-  const betaFeature = await showBetaFeature();
-
-  if (!user) {
-    redirectToSignIn();
-  }
-
-  return (
-    <SidebarProvider>
-      <GlobalSidebar>
-        {betaFeature && (
-          <div className="m-4 rounded-full bg-success p-1.5 text-center text-sm text-success-foreground">
-            Beta feature now available
-          </div>
-        )}
-        {children}
-      </GlobalSidebar>
-      <PostHogIdentifier />
-    </SidebarProvider>
-  );
+    return (
+        <SidebarProvider>
+            {betaFeature && (
+                <div
+                    className="m-4 rounded-full bg-success p-1.5 text-center text-sm text-success-foreground">
+                    Beta feature now available
+                </div>
+            )}
+            {children}
+            <PostHogIdentifier/>
+        </SidebarProvider>
+    );
 };
 
 export default AppLayout;

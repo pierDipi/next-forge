@@ -4,19 +4,13 @@ import withBundleAnalyzer from '@next/bundle-analyzer';
 import { PrismaPlugin } from '@prisma/nextjs-monorepo-workaround-plugin';
 import { env } from '@repo/env';
 import { withSentryConfig } from '@sentry/nextjs';
-import withVercelToolbar from '@vercel/toolbar/plugins/next';
 import type { NextConfig } from 'next';
 import { createSecureHeaders } from 'next-secure-headers';
 
-export const config: NextConfig = withVercelToolbar()({
+export const config: NextConfig = ({
   images: {
     formats: ['image/avif', 'image/webp'],
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'img.clerk.com',
-      },
-    ],
+    remotePatterns: [],
   },
 
   // biome-ignore lint/suspicious/useAwait: rewrites is async
@@ -24,15 +18,15 @@ export const config: NextConfig = withVercelToolbar()({
     return [
       {
         source: '/ingest/static/:path*',
-        destination: 'https://us-assets.i.posthog.com/static/:path*',
+        destination: 'https://eu-assets.i.posthog.com/static/:path*',
       },
       {
         source: '/ingest/:path*',
-        destination: 'https://us.i.posthog.com/:path*',
+        destination: 'https://eu.i.posthog.com/:path*',
       },
       {
         source: '/ingest/decide',
-        destination: 'https://us.i.posthog.com/decide',
+        destination: 'https://eu.i.posthog.com/decide',
       },
     ];
   },

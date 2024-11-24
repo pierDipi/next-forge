@@ -1,5 +1,4 @@
 import { analytics } from '@repo/analytics/posthog/server';
-import { clerkClient } from '@repo/auth/server';
 import { env } from '@repo/env';
 import { parseError } from '@repo/observability/error';
 import { log } from '@repo/observability/log';
@@ -7,16 +6,14 @@ import { stripe } from '@repo/payments';
 import type { Stripe } from '@repo/payments';
 import { headers } from 'next/headers';
 import { NextResponse } from 'next/server';
+import {database} from "@repo/database";
 
 const getUserFromCustomerId = async (customerId: string) => {
-  const clerk = await clerkClient();
-  const users = await clerk.users.getUserList();
-
-  const user = users.data.find(
-    (user) => user.privateMetadata.stripeCustomerId === customerId
-  );
-
-  return user;
+  return database.user.findUnique({
+    where: {
+      stripe_customer_id: customerId
+    }
+  });
 };
 
 const handleCheckoutSessionCompleted = async (

@@ -1,1 +1,3 @@
-export { clerkMiddleware as authMiddleware } from '@clerk/nextjs/server';
+import 'server-only';
+
+export { auth as authMiddleware } from './';
