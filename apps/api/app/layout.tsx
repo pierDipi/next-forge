@@ -1,12 +1,12 @@
-import type { ReactNode } from 'react';
+import type {ReactNode} from 'react';
 
 type RootLayoutProperties = {
   readonly children: ReactNode;
 };
 
-const RootLayout = ({ children }: RootLayoutProperties) => (
+const RootLayout = ({children}: RootLayoutProperties) => (
   <html lang="en">
-    <body>{children}</body>
+  <body>{children}</body>
   </html>
 );
 

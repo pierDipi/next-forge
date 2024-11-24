@@ -1,3 +1,3 @@
 import 'server-only';
 
-export { auth as authMiddleware } from './';
+export {auth as authMiddleware} from './';

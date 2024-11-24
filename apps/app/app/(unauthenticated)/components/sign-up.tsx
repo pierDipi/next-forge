@@ -1,3 +1,3 @@
-import {SignIn} from "./sign-in";
+import {SignIn} from './sign-in';
 
-export const SignUp = SignIn
+export const SignUp = SignIn;

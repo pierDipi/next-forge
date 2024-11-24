@@ -4,7 +4,8 @@ description: How to switch from Clerk to Auth.js.
 ---
 
 <Warning>
-next-forge support for Auth.js is currently blocked by [this issue](https://github.com/nextauthjs/next-auth/issues/11076).
+    next-forge support for Auth.js is currently blocked by [this
+    issue](https://github.com/nextauthjs/next-auth/issues/11076).
 </Warning>
 
 Here's how to switch from Clerk to [Auth.js](https://authjs.dev/).
@@ -63,35 +64,35 @@ Auth.js has no concept of "sign up", so we'll use the `signIn` function to sign 
 
 <CodeGroup>
 
-```tsx packages/auth/components/sign-in.tsx
-import { signIn } from '../';
+    ```tsx packages/auth/components/sign-in.tsx
+    import {signIn} from '../';
 
-export const SignIn = () => (
-  <form
-    action={async () => {
-      "use server";
-      await signIn();
-    }}
-  >
-    <button type="submit">Sign in</button>
-  </form>
-);
-```
+    export const SignIn = () => (
+    <form
+        action={async () => {
+            "use server";
+            await signIn();
+        }}
+    >
+        <button type="submit">Sign in</button>
+    </form>
+    );
+    ```
 
-```tsx packages/auth/components/sign-up.tsx
-import { signIn } from '../';
+    ```tsx packages/auth/components/sign-up.tsx
+    import {signIn} from '../';
 
-export const SignUp = () => (
-  <form
-    action={async () => {
-      "use server";
-      await signIn();
-    }}
-  >
-    <button type="submit">Sign up</button>
-  </form>
-);
-```
+    export const SignUp = () => (
+    <form
+        action={async () => {
+            "use server";
+            await signIn();
+        }}
+    >
+        <button type="submit">Sign up</button>
+    </form>
+    );
+    ```
 
 </CodeGroup>
 

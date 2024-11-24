@@ -1,7 +1,7 @@
 'use client';
 
-import { ModeToggle } from '@repo/design-system/components/mode-toggle';
-import { Button } from '@repo/design-system/components/ui/button';
+import {ModeToggle} from '@repo/design-system/components/mode-toggle';
+import {Button} from '@repo/design-system/components/ui/button';
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -10,10 +10,10 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from '@repo/design-system/components/ui/navigation-menu';
-import { env } from '@repo/env';
-import { Menu, MoveRight, X } from 'lucide-react';
+import {env} from '@repo/env';
+import {Menu, MoveRight, X} from 'lucide-react';
 import Link from 'next/link';
-import { useState } from 'react';
+import {useState} from 'react';
 
 import Image from 'next/image';
 import Logo from './logo.svg';
@@ -62,7 +62,8 @@ export const Header = () => {
   const [isOpen, setOpen] = useState(false);
   return (
     <header className="sticky top-0 left-0 z-40 w-full border-b bg-background">
-      <div className="container relative mx-auto flex min-h-20 flex-row items-center gap-4 lg:grid lg:grid-cols-3">
+      <div
+        className="container relative mx-auto flex min-h-20 flex-row items-center gap-4 lg:grid lg:grid-cols-3">
         <div className="hidden flex-row items-center justify-start gap-4 lg:flex">
           <NavigationMenu className="flex items-start justify-start">
             <NavigationMenuList className="flex flex-row justify-start gap-4">
@@ -102,7 +103,7 @@ export const Header = () => {
                                 className="flex flex-row items-center justify-between rounded px-4 py-2 hover:bg-muted"
                               >
                                 <span>{subItem.title}</span>
-                                <MoveRight className="h-4 w-4 text-muted-foreground" />
+                                <MoveRight className="h-4 w-4 text-muted-foreground"/>
                               </NavigationMenuLink>
                             ))}
                           </div>
@@ -129,8 +130,8 @@ export const Header = () => {
           <Button variant="ghost" className="hidden md:inline" asChild>
             <Link href="/contact">Contact us</Link>
           </Button>
-          <div className="hidden border-r md:inline" />
-          <ModeToggle />
+          <div className="hidden border-r md:inline"/>
+          <ModeToggle/>
           <Button variant="outline" asChild>
             <Link href={`${env.NEXT_PUBLIC_APP_URL}/sign-in`}>Sign in</Link>
           </Button>
@@ -140,10 +141,11 @@ export const Header = () => {
         </div>
         <div className="flex w-12 shrink items-end justify-end lg:hidden">
           <Button variant="ghost" onClick={() => setOpen(!isOpen)}>
-            {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            {isOpen ? <X className="h-5 w-5"/> : <Menu className="h-5 w-5"/>}
           </Button>
           {isOpen && (
-            <div className="container absolute top-20 right-0 flex w-full flex-col gap-8 border-t bg-background py-4 shadow-lg">
+            <div
+              className="container absolute top-20 right-0 flex w-full flex-col gap-8 border-t bg-background py-4 shadow-lg">
               {navigationItems.map((item) => (
                 <div key={item.title}>
                   <div className="flex flex-col gap-2">
@@ -161,7 +163,7 @@ export const Header = () => {
                         }
                       >
                         <span className="text-lg">{item.title}</span>
-                        <MoveRight className="h-4 w-4 stroke-1 text-muted-foreground" />
+                        <MoveRight className="h-4 w-4 stroke-1 text-muted-foreground"/>
                       </Link>
                     ) : (
                       <p className="text-lg">{item.title}</p>
@@ -175,7 +177,7 @@ export const Header = () => {
                         <span className="text-muted-foreground">
                           {subItem.title}
                         </span>
-                        <MoveRight className="h-4 w-4 stroke-1" />
+                        <MoveRight className="h-4 w-4 stroke-1"/>
                       </Link>
                     ))}
                   </div>

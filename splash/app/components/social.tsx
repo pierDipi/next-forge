@@ -1,4 +1,4 @@
-import { Tweet } from 'react-tweet';
+import {Tweet} from 'react-tweet';
 
 const tweets = [
   '1853171412766466119',
@@ -59,13 +59,14 @@ export const Social = () => (
       <h2 className="font-medium text-base/7 text-neutral-500 dark:text-neutral-400">
         Loved by the community
       </h2>
-      <p className="mt-2 max-w-lg text-pretty font-bold text-3xl text-neutral-950 tracking-tighter sm:text-4xl sm:text-5xl dark:text-white">
+      <p
+        className="mt-2 max-w-lg text-pretty font-bold text-3xl text-neutral-950 tracking-tighter sm:text-4xl sm:text-5xl dark:text-white">
         Free and open source, forever.
       </p>
       <div className="mt-10 columns-1 gap-4 sm:mt-16 md:columns-2 lg:columns-3">
         {tweets.map((tweet, index) => (
           <div key={tweet} className={index ? '' : 'sm:-mt-6'}>
-            <Tweet id={tweet} />
+            <Tweet id={tweet}/>
           </div>
         ))}
       </div>

@@ -1,9 +1,9 @@
-import { MDXContent } from '@content-collections/mdx/react';
+import {MDXContent} from '@content-collections/mdx/react';
 import Image from 'next/image';
 import Link from 'next/link';
-import type { ComponentProps, HTMLProps } from 'react';
+import type {ComponentProps, HTMLProps} from 'react';
 
-const a = ({ href, ...properties }: HTMLProps<HTMLAnchorElement>) => {
+const a = ({href, ...properties}: HTMLProps<HTMLAnchorElement>) => {
   if (typeof href !== 'string') {
     throw new TypeError('href is required');
   }
@@ -13,7 +13,7 @@ const a = ({ href, ...properties }: HTMLProps<HTMLAnchorElement>) => {
   }
 
   return (
-    <a {...properties} href={href} target="_blank" rel="noopener noreferrer" />
+    <a {...properties} href={href} target="_blank" rel="noopener noreferrer"/>
   );
 };
 
@@ -40,9 +40,9 @@ const img = (properties: HTMLProps<HTMLImageElement>) => {
 const CompanyName = () => 'next-forge';
 
 export const Mdx = ({
-  code,
-  components,
-}: ComponentProps<typeof MDXContent>) => (
+                      code,
+                      components,
+                    }: ComponentProps<typeof MDXContent>) => (
   <div className="prose prose-neutral dark:prose-invert">
     <MDXContent
       code={code}

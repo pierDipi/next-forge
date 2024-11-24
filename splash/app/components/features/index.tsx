@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { twMerge } from 'tailwind-merge';
+import {twMerge} from 'tailwind-merge';
 
 import BetterStack from './better-stack.svg';
 import Clerk from './clerk.svg';
@@ -182,12 +182,14 @@ export const Features = () => (
       aria-hidden="true"
       className="relative mx-2 h-full overflow-hidden rounded-4xl bg-neutral-50 py-24 ring-1 ring-black/5 ring-inset sm:py-32 dark:bg-neutral-950"
     >
-      <div className="-translate-x-1/2 -translate-y-1/2 absolute top-1/2 left-1/2 mx-auto w-full max-w-[90%] text-center">
+      <div
+        className="-translate-x-1/2 -translate-y-1/2 absolute top-1/2 left-1/2 mx-auto w-full max-w-[90%] text-center">
         <div className="relative z-10">
           <h2 className="font-medium font-mono text-base/7 text-neutral-500 dark:text-neutral-400">
             Modern developer experience
           </h2>
-          <p className="mx-auto mt-2 max-w-xl text-pretty font-bold text-4xl text-neutral-950 tracking-tighter sm:text-5xl dark:text-white">
+          <p
+            className="mx-auto mt-2 max-w-xl text-pretty font-bold text-4xl text-neutral-950 tracking-tighter sm:text-5xl dark:text-white">
             React-based framework with Rust-based tooling
           </p>
         </div>
@@ -195,8 +197,10 @@ export const Features = () => (
       <div className="absolute inset-0 grid grid-cols-1 pt-0 [container-type:inline-size]">
         {rows.map((rowData, index) => (
           <div className="group relative" key={index}>
-            <div className="absolute inset-x-0 top-1/2 h-0.5 bg-[length:12px_100%] bg-gradient-to-r from-[2px] from-neutral-950/15 to-[2px] dark:from-white/15" />
-            <div className="absolute inset-x-0 bottom-0 h-0.5 bg-[length:12px_100%] bg-gradient-to-r from-[2px] from-neutral-950/5 to-[2px] group-last:hidden dark:from-white/5" />
+            <div
+              className="absolute inset-x-0 top-1/2 h-0.5 bg-[length:12px_100%] bg-gradient-to-r from-[2px] from-neutral-950/15 to-[2px] dark:from-white/15"/>
+            <div
+              className="absolute inset-x-0 bottom-0 h-0.5 bg-[length:12px_100%] bg-gradient-to-r from-[2px] from-neutral-950/5 to-[2px] group-last:hidden dark:from-white/5"/>
             {rowData.row.map((logo, _logoIndex) => (
               <div
                 key={logo.label}
@@ -208,7 +212,7 @@ export const Features = () => (
                   'shadow-[0_0_15px_rgba(255,255,255,0.1)] dark:shadow-[0_0_15px_rgba(0,0,0,0.2)]'
                 )}
               >
-                <Image alt="" src={logo.src} className="size-4" />
+                <Image alt="" src={logo.src} className="size-4"/>
                 <span className="font-medium text-neutral-950 text-sm/6 dark:text-white">
                   {logo.label}
                 </span>

@@ -1,8 +1,8 @@
-import { env } from '@repo/env';
-import { config, withAnalyzer, withSentry } from '@repo/next-config';
-import type { NextConfig } from 'next';
+import {env} from '@repo/env';
+import {config, withAnalyzer, withSentry} from '@repo/next-config';
+import type {NextConfig} from 'next';
 
-let nextConfig: NextConfig = { ...config };
+let nextConfig: NextConfig = {...config};
 
 if (env.VERCEL) {
   nextConfig = withSentry(nextConfig);

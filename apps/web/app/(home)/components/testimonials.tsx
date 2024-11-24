@@ -1,18 +1,14 @@
 'use client';
 
-import {
-  Avatar,
-  AvatarFallback,
-  AvatarImage,
-} from '@repo/design-system/components/ui/avatar';
+import {Avatar, AvatarFallback, AvatarImage,} from '@repo/design-system/components/ui/avatar';
 import {
   Carousel,
   type CarouselApi,
   CarouselContent,
   CarouselItem,
 } from '@repo/design-system/components/ui/carousel';
-import { User } from 'lucide-react';
-import { useEffect, useState } from 'react';
+import {User} from 'lucide-react';
+import {useEffect, useState} from 'react';
 
 export const Testimonials = () => {
   const [api, setApi] = useState<CarouselApi>();
@@ -43,10 +39,11 @@ export const Testimonials = () => {
           </h2>
           <Carousel setApi={setApi} className="w-full">
             <CarouselContent>
-              {Array.from({ length: 15 }).map((_, index) => (
+              {Array.from({length: 15}).map((_, index) => (
                 <CarouselItem className="lg:basis-1/2" key={index}>
-                  <div className="flex aspect-video h-full flex-col justify-between rounded-md bg-muted p-6 lg:col-span-2">
-                    <User className="h-8 w-8 stroke-1" />
+                  <div
+                    className="flex aspect-video h-full flex-col justify-between rounded-md bg-muted p-6 lg:col-span-2">
+                    <User className="h-8 w-8 stroke-1"/>
                     <div className="flex flex-col gap-4">
                       <div className="flex flex-col">
                         <h3 className="text-xl tracking-tight">
@@ -60,7 +57,7 @@ export const Testimonials = () => {
                       <p className="flex flex-row items-center gap-2 text-sm">
                         <span className="text-muted-foreground">By</span>
                         <Avatar className="h-6 w-6">
-                          <AvatarImage src="https://github.com/shadcn.png" />
+                          <AvatarImage src="https://github.com/shadcn.png"/>
                           <AvatarFallback>CN</AvatarFallback>
                         </Avatar>
                         <span>John Johnsen</span>

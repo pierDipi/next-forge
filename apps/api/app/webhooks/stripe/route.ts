@@ -1,18 +1,18 @@
-import { analytics } from '@repo/analytics/posthog/server';
-import { env } from '@repo/env';
-import { parseError } from '@repo/observability/error';
-import { log } from '@repo/observability/log';
-import { stripe } from '@repo/payments';
-import type { Stripe } from '@repo/payments';
-import { headers } from 'next/headers';
-import { NextResponse } from 'next/server';
-import {database} from "@repo/database";
+import {analytics} from '@repo/analytics/posthog/server';
+import {database} from '@repo/database';
+import {env} from '@repo/env';
+import {parseError} from '@repo/observability/error';
+import {log} from '@repo/observability/log';
+import type {Stripe} from '@repo/payments';
+import {stripe} from '@repo/payments';
+import {headers} from 'next/headers';
+import {NextResponse} from 'next/server';
 
 const getUserFromCustomerId = async (customerId: string) => {
   return database.user.findUnique({
     where: {
-      stripe_customer_id: customerId
-    }
+      stripeCustomerId: customerId,
+    },
   });
 };
 
@@ -90,7 +90,7 @@ export const POST = async (request: Request): Promise<Response> => {
 
     await analytics.shutdown();
 
-    return NextResponse.json({ result: event, ok: true });
+    return NextResponse.json({result: event, ok: true});
   } catch (error) {
     const message = parseError(error);
 
@@ -101,7 +101,7 @@ export const POST = async (request: Request): Promise<Response> => {
         message: 'something went wrong',
         ok: false,
       },
-      { status: 500 }
+      {status: 500}
     );
   }
 };

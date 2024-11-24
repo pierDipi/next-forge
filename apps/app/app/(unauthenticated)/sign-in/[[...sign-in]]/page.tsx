@@ -1,11 +1,11 @@
-import { createMetadata } from '@repo/seo/metadata';
-import type { Metadata } from 'next';
-import {SignIn} from "@/app/(unauthenticated)/components/sign-in";
+import {SignIn} from '@/app/(unauthenticated)/components/sign-in';
+import {createMetadata} from '@repo/seo/metadata';
+import type {Metadata} from 'next';
 
 const title = 'Welcome back';
 const description = 'Enter your details to sign in.';
 
-export const metadata: Metadata = createMetadata({ title, description });
+export const metadata: Metadata = createMetadata({title, description});
 
 const SignInPage = () => (
   <>
@@ -13,7 +13,7 @@ const SignInPage = () => (
       <h1 className="font-semibold text-2xl tracking-tight">{title}</h1>
       <p className="text-muted-foreground text-md">{description}</p>
     </div>
-    <SignIn />
+    <SignIn/>
   </>
 );
 

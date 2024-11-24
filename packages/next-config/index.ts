@@ -1,13 +1,13 @@
 import withBundleAnalyzer from '@next/bundle-analyzer';
 
 // @ts-expect-error No declaration file
-import { PrismaPlugin } from '@prisma/nextjs-monorepo-workaround-plugin';
-import { env } from '@repo/env';
-import { withSentryConfig } from '@sentry/nextjs';
-import type { NextConfig } from 'next';
-import { createSecureHeaders } from 'next-secure-headers';
+import {PrismaPlugin} from '@prisma/nextjs-monorepo-workaround-plugin';
+import {env} from '@repo/env';
+import {withSentryConfig} from '@sentry/nextjs';
+import type {NextConfig} from 'next';
+import {createSecureHeaders} from 'next-secure-headers';
 
-export const config: NextConfig = ({
+export const config: NextConfig = {
   images: {
     formats: ['image/avif', 'image/webp'],
     remotePatterns: [],
@@ -40,26 +40,31 @@ export const config: NextConfig = ({
           // HSTS Preload: https://hstspreload.org/
           forceHTTPSRedirect: [
             true,
-            { maxAge: 63_072_000, includeSubDomains: true, preload: true },
+            {maxAge: 63_072_000, includeSubDomains: true, preload: true},
           ],
         }),
       },
     ];
   },
 
-  webpack(config, { isServer }) {
+  i18n: {
+    locales: ['en', 'es'],
+    defaultLocale: 'en',
+  },
+
+  webpack(config, {isServer}) {
     if (isServer) {
       config.plugins = [...config.plugins, new PrismaPlugin()];
     }
 
-    config.ignoreWarnings = [{ module: /@opentelemetry\/instrumentation/ }];
+    config.ignoreWarnings = [{module: /@opentelemetry\/instrumentation/}];
 
     return config;
   },
 
   // This is required to support PostHog trailing slash API requests
   skipTrailingSlashRedirect: true,
-});
+};
 
 export const sentryConfig: Parameters<typeof withSentryConfig>[1] = {
   org: env.SENTRY_ORG,
@@ -105,4 +110,4 @@ export const withSentry = (sourceConfig: NextConfig): NextConfig =>
 export const withAnalyzer = (sourceConfig: NextConfig): NextConfig =>
   withBundleAnalyzer()(sourceConfig);
 
-export { withLogtail } from '@logtail/next';
+export {withLogtail} from '@logtail/next';

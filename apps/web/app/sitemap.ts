@@ -1,9 +1,9 @@
 // biome-ignore lint/correctness/noNodejsModules: Generates sitemap on Node.js
 import fs from 'node:fs';
-import { env } from '@repo/env';
-import type { MetadataRoute } from 'next';
+import {env} from '@repo/env';
+import type {MetadataRoute} from 'next';
 
-const appFolders = fs.readdirSync('app', { withFileTypes: true });
+const appFolders = fs.readdirSync('app', {withFileTypes: true});
 const pages = appFolders
   .filter((file) => file.isDirectory())
   .filter((folder) => !folder.name.startsWith('_'))
@@ -11,14 +11,14 @@ const pages = appFolders
   .map((folder) => folder.name);
 
 const blogs = fs
-  .readdirSync('content/blog', { withFileTypes: true })
+  .readdirSync('content/blog', {withFileTypes: true})
   .filter((file) => !file.isDirectory())
   .filter((file) => !file.name.startsWith('_'))
   .filter((file) => !file.name.startsWith('('))
   .map((file) => file.name.replace('.mdx', ''));
 
 const legals = fs
-  .readdirSync('content/legal', { withFileTypes: true })
+  .readdirSync('content/legal', {withFileTypes: true})
   .filter((file) => !file.isDirectory())
   .filter((file) => !file.name.startsWith('_'))
   .filter((file) => !file.name.startsWith('('))

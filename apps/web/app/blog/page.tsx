@@ -1,16 +1,16 @@
-import { cn } from '@repo/design-system/lib/utils';
-import type { Blog, WithContext } from '@repo/seo/json-ld';
-import { JsonLd } from '@repo/seo/json-ld';
-import { createMetadata } from '@repo/seo/metadata';
-import { allPosts } from 'content-collections';
-import type { Metadata } from 'next';
+import {cn} from '@repo/design-system/lib/utils';
+import type {Blog, WithContext} from '@repo/seo/json-ld';
+import {JsonLd} from '@repo/seo/json-ld';
+import {createMetadata} from '@repo/seo/metadata';
+import {allPosts} from 'content-collections';
+import type {Metadata} from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 
 const title = 'Blog';
 const description = 'Thoughts, ideas, and opinions.';
 
-export const metadata: Metadata = createMetadata({ title, description });
+export const metadata: Metadata = createMetadata({title, description});
 
 const BlogIndex = () => {
   const jsonLd: WithContext<Blog> = {
@@ -20,10 +20,11 @@ const BlogIndex = () => {
 
   return (
     <>
-      <JsonLd code={jsonLd} />
+      <JsonLd code={jsonLd}/>
       <div className="w-full py-20 lg:py-40">
         <div className="container mx-auto flex flex-col gap-14">
-          <div className="flex w-full flex-col gap-8 sm:flex-row sm:items-center sm:justify-between">
+          <div
+            className="flex w-full flex-col gap-8 sm:flex-row sm:items-center sm:justify-between">
             <h4 className="max-w-xl font-regular text-3xl tracking-tighter md:text-5xl">
               Latest articles
             </h4>

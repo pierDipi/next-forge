@@ -1,5 +1,5 @@
-import { captureException } from '@sentry/nextjs';
-import { log } from './log';
+import {captureException} from '@sentry/nextjs';
+import {log} from './log';
 
 export const parseError = (error: unknown): string => {
   let message = 'An error occurred';

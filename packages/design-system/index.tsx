@@ -8,21 +8,21 @@ import {TooltipProvider} from './components/ui/tooltip';
 type DesignSystemProviderProperties = ThemeProviderProps;
 
 export const DesignSystemProvider = ({
-                                         children,
-                                         ...properties
+                                       children,
+                                       ...properties
                                      }: DesignSystemProviderProperties) => (
-    <ThemeProvider
-        attribute="class"
-        defaultTheme="system"
-        enableSystem
-        disableTransitionOnChange
-        {...properties}
-    >
-        <AuthProvider>
-            <AnalyticsProvider>
-                <TooltipProvider>{children}</TooltipProvider>
-                <Toaster/>
-            </AnalyticsProvider>
-        </AuthProvider>
-    </ThemeProvider>
+  <ThemeProvider
+    attribute="class"
+    defaultTheme="system"
+    enableSystem
+    disableTransitionOnChange
+    {...properties}
+  >
+    <AuthProvider>
+      <AnalyticsProvider>
+        <TooltipProvider>{children}</TooltipProvider>
+        <Toaster/>
+      </AnalyticsProvider>
+    </AuthProvider>
+  </ThemeProvider>
 );

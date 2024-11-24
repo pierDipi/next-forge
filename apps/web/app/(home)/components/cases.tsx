@@ -6,7 +6,7 @@ import {
   CarouselContent,
   CarouselItem,
 } from '@repo/design-system/components/ui/carousel';
-import { useEffect, useState } from 'react';
+import {useEffect, useState} from 'react';
 
 export const Cases = () => {
   const [api, setApi] = useState<CarouselApi>();
@@ -37,9 +37,10 @@ export const Cases = () => {
           </h2>
           <Carousel setApi={setApi} className="w-full">
             <CarouselContent>
-              {Array.from({ length: 15 }).map((_, index) => (
+              {Array.from({length: 15}).map((_, index) => (
                 <CarouselItem className="basis-1/4 lg:basis-1/6" key={index}>
-                  <div className="flex aspect-square items-center justify-center rounded-md bg-muted p-6">
+                  <div
+                    className="flex aspect-square items-center justify-center rounded-md bg-muted p-6">
                     <span className="text-sm">Logo {index + 1}</span>
                   </div>
                 </CarouselItem>

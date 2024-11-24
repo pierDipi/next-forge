@@ -1,5 +1,5 @@
 import merge from 'lodash.merge';
-import type { Metadata } from 'next';
+import type {Metadata} from 'next';
 
 type MetadataGenerator = Omit<Metadata, 'description' | 'title'> & {
   title: string;
@@ -16,11 +16,11 @@ const publisher = 'Hayden Bleasel';
 const twitterHandle = '@haydenbleasel';
 
 export const createMetadata = ({
-  title,
-  description,
-  image,
-  ...properties
-}: MetadataGenerator): Metadata => {
+                                 title,
+                                 description,
+                                 image,
+                                 ...properties
+                               }: MetadataGenerator): Metadata => {
   const parsedTitle = `${title} | ${applicationName}`;
   const defaultMetadata: Metadata = {
     title: parsedTitle,

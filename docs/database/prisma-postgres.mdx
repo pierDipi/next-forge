@@ -3,27 +3,29 @@ title: Switch to Prisma Postgres
 description: How to change the database provider from Neon to Prisma Postgres.
 ---
 
-import { Authors } from '/snippets/authors.mdx';
+
+
+import {Authors} from '/snippets/authors.mdx';
 
 <Authors data={[{
-  user: {
-    name: 'Hayden Bleasel',
-    id: 'haydenbleasel',
-  },
-  company: {
-    name: 'next-forge',
-    id: 'next-forge',
-  },
+    user: {
+        name: 'Hayden Bleasel',
+        id: 'haydenbleasel',
+    },
+    company: {
+        name: 'next-forge',
+        id: 'next-forge',
+    },
 }, {
-  user: {
-    name: 'Nikolas Burk',
-    id: 'nikolasburk',
-  },
-  company: {
-    name: 'Prisma',
-    id: 'prisma',
-  },
-}]} />
+    user: {
+        name: 'Nikolas Burk',
+        id: 'nikolasburk',
+    },
+    company: {
+        name: 'Prisma',
+        id: 'prisma',
+    },
+}]}/>
 
 Here's how to switch from Neon to [Prisma Postgres](https://www.prisma.io/postgres) — a serverless database with zero cold starts and a generous free tier. You can learn more about its architecture that enables this [here](https://www.prisma.io/blog/announcing-prisma-postgres-early-access).
 
@@ -108,7 +110,9 @@ PULSE_API_KEY="ey...."
 ```
 
 <Info>
-  You can find your Pulse API key in your Prisma Postgres connection string, it's the value of the `api_key` argument and starts with `ey...`. Alternatively, you can find the API key in your [Prisma Postgres Dashboard](https://console.prisma.io).
+    You can find your Pulse API key in your Prisma Postgres connection string, it's the value of the
+    `api_key` argument and starts with `ey...`. Alternatively, you can find the API key in your
+    [Prisma Postgres Dashboard](https://console.prisma.io).
 </Info>
 
 Then, update the `env` package to include the new `PULSE_API_KEY` environment variable:

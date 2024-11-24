@@ -1,12 +1,12 @@
 import 'server-only';
-import { auth } from '@repo/auth/server';
-import { env } from '@repo/env';
-import { Svix } from 'svix';
+import {auth} from '@repo/auth/server';
+import {env} from '@repo/env';
+import {Svix} from 'svix';
 
 const svix = new Svix(env.SVIX_TOKEN);
 
 export const send = async (eventType: string, payload: any) => {
-  const { orgId } = await auth();
+  const {orgId} = await auth();
 
   if (!orgId) {
     return;
@@ -26,7 +26,7 @@ export const send = async (eventType: string, payload: any) => {
 };
 
 export const getAppPortal = async () => {
-  const { orgId } = await auth();
+  const {orgId} = await auth();
 
   if (!orgId) {
     return;

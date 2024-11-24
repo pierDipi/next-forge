@@ -2,11 +2,13 @@
 
 :tada: This release contains work from a new contributor! :tada:
 
-Thank you, Yanis Vestfalskii ([@yanisneverlies](https://github.com/yanisneverlies)), for all your work!
+Thank you, Yanis Vestfalskii ([@yanisneverlies](https://github.com/yanisneverlies)), for all your
+work!
 
 #### 🐛 Bug Fix
 
-- fix: resolve submenu duplication issues by using index as a key [#278](https://github.com/haydenbleasel/next-forge/pull/278) ([@yanisneverlies](https://github.com/yanisneverlies))
+- fix: resolve submenu duplication issues by using index as a
+  key [#278](https://github.com/haydenbleasel/next-forge/pull/278) ([@yanisneverlies](https://github.com/yanisneverlies))
 
 #### Authors: 1
 
@@ -46,7 +48,8 @@ Thank you, Yanis Vestfalskii ([@yanisneverlies](https://github.com/yanisneverlie
 
 #### 📝 Documentation
 
-- Create Auth.js migration guide [#268](https://github.com/haydenbleasel/next-forge/pull/268) ([@haydenbleasel](https://github.com/haydenbleasel))
+- Create Auth.js migration
+  guide [#268](https://github.com/haydenbleasel/next-forge/pull/268) ([@haydenbleasel](https://github.com/haydenbleasel))
 
 #### Authors: 1
 
@@ -95,7 +98,8 @@ Thank you, Yanis Vestfalskii ([@yanisneverlies](https://github.com/yanisneverlie
 
 #### 🐛 Bug Fix
 
-- Add recommended libraries documentation [#270](https://github.com/haydenbleasel/next-forge/pull/270) ([@yamz8](https://github.com/yamz8) [@haydenbleasel](https://github.com/haydenbleasel))
+- Add recommended libraries
+  documentation [#270](https://github.com/haydenbleasel/next-forge/pull/270) ([@yamz8](https://github.com/yamz8) [@haydenbleasel](https://github.com/haydenbleasel))
 
 #### Authors: 2
 
@@ -148,7 +152,8 @@ Thank you, null[@idkgene](https://github.com/idkgene), for all your work!
 
 #### 🐛 Bug Fix
 
-- VSCode workspace configuration [#253](https://github.com/haydenbleasel/next-forge/pull/253) ([@idkgene](https://github.com/idkgene) [@haydenbleasel](https://github.com/haydenbleasel))
+- VSCode workspace
+  configuration [#253](https://github.com/haydenbleasel/next-forge/pull/253) ([@idkgene](https://github.com/idkgene) [@haydenbleasel](https://github.com/haydenbleasel))
 
 #### Authors: 2
 
@@ -161,7 +166,8 @@ Thank you, null[@idkgene](https://github.com/idkgene), for all your work!
 
 #### 🐛 Bug Fix
 
-- Extract testing configuration into repo/testing package [#182](https://github.com/haydenbleasel/next-forge/pull/182) ([@haydenbleasel](https://github.com/haydenbleasel))
+- Extract testing configuration into repo/testing
+  package [#182](https://github.com/haydenbleasel/next-forge/pull/182) ([@haydenbleasel](https://github.com/haydenbleasel))
 
 #### Authors: 1
 
@@ -200,25 +206,30 @@ Thank you, null[@idkgene](https://github.com/idkgene), for all your work!
 #### Collaboration ([#249](https://github.com/haydenbleasel/next-forge/pull/249))
 
 - **New Features**
-	- Introduced `AvatarStack` and `Cursors` components for enhanced user presence and cursor tracking in collaborative environments.
-	- Added a new `CollaborationProvider` component to facilitate real-time collaboration features.
-	- Implemented user search functionality within the organization.
+    - Introduced `AvatarStack` and `Cursors` components for enhanced user presence and cursor
+      tracking in collaborative environments.
+    - Added a new `CollaborationProvider` component to facilitate real-time collaboration features.
+    - Implemented user search functionality within the organization.
 
 - **Improvements**
-	- Expanded configuration options with the addition of the `LIVEBLOCKS_SECRET` environment variable across multiple applications.
+    - Expanded configuration options with the addition of the `LIVEBLOCKS_SECRET` environment
+      variable across multiple applications.
 
 - **Bug Fixes**
-	- Adjusted the `UserButton` styling to ensure it occupies the full width of the sidebar.
+    - Adjusted the `UserButton` styling to ensure it occupies the full width of the sidebar.
 
 - **Chores**
-	- Added new dependencies: `@repo/collaboration` and `fuse.js` to the project.
+    - Added new dependencies: `@repo/collaboration` and `fuse.js` to the project.
+
 <!-- end of auto-generated comment: release notes by coderabbit.ai -->
 
 ---
 
 #### 🚀 Enhancement
 
-- Collaboration [#249](https://github.com/haydenbleasel/next-forge/pull/249) ([@haydenbleasel](https://github.com/haydenbleasel))
+-
+
+Collaboration [#249](https://github.com/haydenbleasel/next-forge/pull/249) ([@haydenbleasel](https://github.com/haydenbleasel))
 
 #### Authors: 1
 
@@ -246,7 +257,8 @@ Thank you, Kaiden Riley ([@krpleo](https://github.com/krpleo)), for all your wor
 
 #### 🐛 Bug Fix
 
-- fix: sidebar collapsible triggers [#256](https://github.com/haydenbleasel/next-forge/pull/256) ([@krpleo](https://github.com/krpleo))
+- fix: sidebar collapsible
+  triggers [#256](https://github.com/haydenbleasel/next-forge/pull/256) ([@krpleo](https://github.com/krpleo))
 
 #### ⚠️ Pushed to `main`
 
@@ -268,7 +280,8 @@ Thank you, Pere Bruy ([@OsoThevenin](https://github.com/OsoThevenin)), for all y
 
 #### 🐛 Bug Fix
 
-- Export PrismaClient in database package [#258](https://github.com/haydenbleasel/next-forge/pull/258) ([@OsoThevenin](https://github.com/OsoThevenin))
+- Export PrismaClient in database
+  package [#258](https://github.com/haydenbleasel/next-forge/pull/258) ([@OsoThevenin](https://github.com/OsoThevenin))
 
 #### Authors: 1
 
@@ -284,7 +297,8 @@ Thank you, Dade ([@shengdade](https://github.com/shengdade)), for all your work!
 
 #### 🐛 Bug Fix
 
-- Remove duplicate Tailwind utility classes [#255](https://github.com/haydenbleasel/next-forge/pull/255) ([@shengdade](https://github.com/shengdade))
+- Remove duplicate Tailwind utility
+  classes [#255](https://github.com/haydenbleasel/next-forge/pull/255) ([@shengdade](https://github.com/shengdade))
 
 #### ⚠️ Pushed to `main`
 
@@ -354,7 +368,8 @@ Thank you, Matthew Lewis ([@malewis5](https://github.com/malewis5)), for all you
 
 #### 🐛 Bug Fix
 
-- fix: add sheet title for a11y. [#250](https://github.com/haydenbleasel/next-forge/pull/250) ([@malewis5](https://github.com/malewis5) [@haydenbleasel](https://github.com/haydenbleasel))
+- fix: add sheet title for
+  a11y. [#250](https://github.com/haydenbleasel/next-forge/pull/250) ([@malewis5](https://github.com/malewis5) [@haydenbleasel](https://github.com/haydenbleasel))
 
 #### Authors: 2
 
@@ -380,7 +395,9 @@ Thank you, Matthew Lewis ([@malewis5](https://github.com/malewis5)), for all you
 
 #### 🚀 Enhancement
 
-- Turbo [#170](https://github.com/haydenbleasel/next-forge/pull/170) ([@haydenbleasel](https://github.com/haydenbleasel))
+-
+
+Turbo [#170](https://github.com/haydenbleasel/next-forge/pull/170) ([@haydenbleasel](https://github.com/haydenbleasel))
 
 #### Authors: 1
 
@@ -392,7 +409,8 @@ Thank you, Matthew Lewis ([@malewis5](https://github.com/malewis5)), for all you
 
 #### 🐛 Bug Fix
 
-- Add IP geolocation docs [#248](https://github.com/haydenbleasel/next-forge/pull/248) ([@davidmytton](https://github.com/davidmytton))
+- Add IP geolocation
+  docs [#248](https://github.com/haydenbleasel/next-forge/pull/248) ([@davidmytton](https://github.com/davidmytton))
 
 #### Authors: 1
 
@@ -408,7 +426,8 @@ Thank you, Matthew Lewis ([@malewis5](https://github.com/malewis5)), for all you
 
 #### 📝 Documentation
 
-- Added anti-fraud advice [#237](https://github.com/haydenbleasel/next-forge/pull/237) ([@davidmytton](https://github.com/davidmytton))
+- Added anti-fraud
+  advice [#237](https://github.com/haydenbleasel/next-forge/pull/237) ([@davidmytton](https://github.com/davidmytton))
 
 #### Authors: 2
 
@@ -425,7 +444,8 @@ Thank you, Michael Zavattaro ([@mzavattaro](https://github.com/mzavattaro)), for
 
 #### 🐛 Bug Fix
 
-- Update location of .env file in directory docs [#241](https://github.com/haydenbleasel/next-forge/pull/241) ([@mzavattaro](https://github.com/mzavattaro))
+- Update location of .env file in directory
+  docs [#241](https://github.com/haydenbleasel/next-forge/pull/241) ([@mzavattaro](https://github.com/mzavattaro))
 
 #### Authors: 1
 
@@ -585,8 +605,10 @@ Thank you, Anthony Shew ([@anthonyshew](https://github.com/anthonyshew)), for al
 
 #### 🐛 Bug Fix
 
-- Update `turbo.json` to improve cache hit ratios [#235](https://github.com/haydenbleasel/next-forge/pull/235) ([@anthonyshew](https://github.com/anthonyshew) [@haydenbleasel](https://github.com/haydenbleasel))
-- Remove root tsconfig.json [#236](https://github.com/haydenbleasel/next-forge/pull/236) ([@anthonyshew](https://github.com/anthonyshew))
+- Update `turbo.json` to improve cache hit
+  ratios [#235](https://github.com/haydenbleasel/next-forge/pull/235) ([@anthonyshew](https://github.com/anthonyshew) [@haydenbleasel](https://github.com/haydenbleasel))
+- Remove root
+  tsconfig.json [#236](https://github.com/haydenbleasel/next-forge/pull/236) ([@anthonyshew](https://github.com/anthonyshew))
 
 #### Authors: 2
 
@@ -603,7 +625,8 @@ Thank you, null[@svix-lucho](https://github.com/svix-lucho), for all your work!
 
 #### 🚀 Enhancement
 
-- Add Svix Webhooks [#212](https://github.com/haydenbleasel/next-forge/pull/212) ([@svix-lucho](https://github.com/svix-lucho) [@haydenbleasel](https://github.com/haydenbleasel))
+- Add Svix
+  Webhooks [#212](https://github.com/haydenbleasel/next-forge/pull/212) ([@svix-lucho](https://github.com/svix-lucho) [@haydenbleasel](https://github.com/haydenbleasel))
 
 #### Authors: 2
 
@@ -616,7 +639,8 @@ Thank you, null[@svix-lucho](https://github.com/svix-lucho), for all your work!
 
 #### 🐛 Bug Fix
 
-- Adjust Arcjet middleware to allow monitoring & expand docs [#231](https://github.com/haydenbleasel/next-forge/pull/231) ([@davidmytton](https://github.com/davidmytton))
+- Adjust Arcjet middleware to allow monitoring & expand
+  docs [#231](https://github.com/haydenbleasel/next-forge/pull/231) ([@davidmytton](https://github.com/davidmytton))
 
 #### Authors: 1
 
@@ -632,8 +656,10 @@ Thank you, David Mytton ([@davidmytton](https://github.com/davidmytton)), for al
 
 #### 🐛 Bug Fix
 
-- List the required accounts in setup [#229](https://github.com/haydenbleasel/next-forge/pull/229) ([@davidmytton](https://github.com/davidmytton))
-- Update drizzle.mdx [#230](https://github.com/haydenbleasel/next-forge/pull/230) ([@yamz8](https://github.com/yamz8))
+- List the required accounts in
+  setup [#229](https://github.com/haydenbleasel/next-forge/pull/229) ([@davidmytton](https://github.com/davidmytton))
+- Update
+  drizzle.mdx [#230](https://github.com/haydenbleasel/next-forge/pull/230) ([@yamz8](https://github.com/yamz8))
 
 #### Authors: 2
 
@@ -736,7 +762,8 @@ Thank you, Jamie Barton ([@notrab](https://github.com/notrab)), for all your wor
 
 #### 🐛 Bug Fix
 
-- feat: add turso guide [#226](https://github.com/haydenbleasel/next-forge/pull/226) ([@notrab](https://github.com/notrab) [@haydenbleasel](https://github.com/haydenbleasel))
+- feat: add turso
+  guide [#226](https://github.com/haydenbleasel/next-forge/pull/226) ([@notrab](https://github.com/notrab) [@haydenbleasel](https://github.com/haydenbleasel))
 
 #### Authors: 2
 
@@ -773,7 +800,8 @@ Thank you, Jamie Barton ([@notrab](https://github.com/notrab)), for all your wor
 
 #### 🐛 Bug Fix
 
-- Finish extracting arcjet package [#221](https://github.com/haydenbleasel/next-forge/pull/221) ([@haydenbleasel](https://github.com/haydenbleasel))
+- Finish extracting arcjet
+  package [#221](https://github.com/haydenbleasel/next-forge/pull/221) ([@haydenbleasel](https://github.com/haydenbleasel))
 
 #### Authors: 1
 
@@ -789,7 +817,8 @@ Thank you, Christian Leonardo ([@whyleonardo](https://github.com/whyleonardo)), 
 
 #### 🐛 Bug Fix
 
-- Fix fetch status response error check condition [#217](https://github.com/haydenbleasel/next-forge/pull/217) ([@whyleonardo](https://github.com/whyleonardo))
+- Fix fetch status response error check
+  condition [#217](https://github.com/haydenbleasel/next-forge/pull/217) ([@whyleonardo](https://github.com/whyleonardo))
 
 #### Authors: 1
 
@@ -849,7 +878,9 @@ Thank you, Christian Leonardo ([@whyleonardo](https://github.com/whyleonardo)), 
 
 #### 🐛 Bug Fix
 
-- Update `mint.json` [#216](https://github.com/haydenbleasel/next-forge/pull/216) ([@fmerian](https://github.com/fmerian))
+-
+
+Update `mint.json` [#216](https://github.com/haydenbleasel/next-forge/pull/216) ([@fmerian](https://github.com/fmerian))
 
 #### Authors: 1
 
@@ -861,7 +892,8 @@ Thank you, Christian Leonardo ([@whyleonardo](https://github.com/whyleonardo)), 
 
 #### 🐛 Bug Fix
 
-- Add Documentation section to docs [#214](https://github.com/haydenbleasel/next-forge/pull/214) ([@fmerian](https://github.com/fmerian) [@haydenbleasel](https://github.com/haydenbleasel))
+- Add Documentation section to
+  docs [#214](https://github.com/haydenbleasel/next-forge/pull/214) ([@fmerian](https://github.com/fmerian) [@haydenbleasel](https://github.com/haydenbleasel))
 
 #### Authors: 2
 
@@ -874,7 +906,9 @@ Thank you, Christian Leonardo ([@whyleonardo](https://github.com/whyleonardo)), 
 
 #### 🚀 Enhancement
 
-- V2.13 [#215](https://github.com/haydenbleasel/next-forge/pull/215) ([@haydenbleasel](https://github.com/haydenbleasel))
+-
+
+V2.13 [#215](https://github.com/haydenbleasel/next-forge/pull/215) ([@haydenbleasel](https://github.com/haydenbleasel))
 
 #### Authors: 1
 
@@ -886,7 +920,8 @@ Thank you, Christian Leonardo ([@whyleonardo](https://github.com/whyleonardo)), 
 
 #### 🐛 Bug Fix
 
-- Fix `.font` instructions in docs app [#213](https://github.com/haydenbleasel/next-forge/pull/213) ([@fmerian](https://github.com/fmerian) [@haydenbleasel](https://github.com/haydenbleasel))
+- Fix `.font` instructions in docs
+  app [#213](https://github.com/haydenbleasel/next-forge/pull/213) ([@fmerian](https://github.com/fmerian) [@haydenbleasel](https://github.com/haydenbleasel))
 
 #### Authors: 2
 
@@ -915,7 +950,8 @@ Thank you, jcchrrr ([@jcchrrr](https://github.com/jcchrrr)), for all your work!
 
 #### 🐛 Bug Fix
 
-- fix: vscode settings, tailwind config location [#211](https://github.com/haydenbleasel/next-forge/pull/211) ([@jcchrrr](https://github.com/jcchrrr))
+- fix: vscode settings, tailwind config
+  location [#211](https://github.com/haydenbleasel/next-forge/pull/211) ([@jcchrrr](https://github.com/jcchrrr))
 
 #### Authors: 1
 
@@ -978,7 +1014,8 @@ Thank you, jcchrrr ([@jcchrrr](https://github.com/jcchrrr)), for all your work!
 
 #### 🐛 Bug Fix
 
-- Include database scaffolding step in setup instructions [#208](https://github.com/haydenbleasel/next-forge/pull/208) ([@paulgrieselhuber](https://github.com/paulgrieselhuber))
+- Include database scaffolding step in setup
+  instructions [#208](https://github.com/haydenbleasel/next-forge/pull/208) ([@paulgrieselhuber](https://github.com/paulgrieselhuber))
 
 #### Authors: 1
 
@@ -990,11 +1027,13 @@ Thank you, jcchrrr ([@jcchrrr](https://github.com/jcchrrr)), for all your work!
 
 :tada: This release contains work from a new contributor! :tada:
 
-Thank you, Paul Grieselhuber ([@paulgrieselhuber](https://github.com/paulgrieselhuber)), for all your work!
+Thank you, Paul Grieselhuber ([@paulgrieselhuber](https://github.com/paulgrieselhuber)), for all
+your work!
 
 #### 🐛 Bug Fix
 
-- Include necessary global env vars for turbo.json to allow Vercel builds [#206](https://github.com/haydenbleasel/next-forge/pull/206) ([@paulgrieselhuber](https://github.com/paulgrieselhuber))
+- Include necessary global env vars for turbo.json to allow Vercel
+  builds [#206](https://github.com/haydenbleasel/next-forge/pull/206) ([@paulgrieselhuber](https://github.com/paulgrieselhuber))
 
 #### Authors: 1
 
@@ -1006,7 +1045,8 @@ Thank you, Paul Grieselhuber ([@paulgrieselhuber](https://github.com/paulgriesel
 
 #### ⚠️ Pushed to `main`
 
-- Merge branch 'main' of https://github.com/haydenbleasel/next-forge ([@haydenbleasel](https://github.com/haydenbleasel))
+- Merge branch 'main'
+  of https://github.com/haydenbleasel/next-forge ([@haydenbleasel](https://github.com/haydenbleasel))
 - Add socials to homepage ([@haydenbleasel](https://github.com/haydenbleasel))
 - Update layout.tsx ([@haydenbleasel](https://github.com/haydenbleasel))
 - Load Geist from Google Fonts ([@haydenbleasel](https://github.com/haydenbleasel))
@@ -1025,7 +1065,8 @@ Thank you, null[@000-KunalPal](https://github.com/000-KunalPal), for all your wo
 
 #### 🐛 Bug Fix
 
-- fix: Remove duplicate "is" in text [#205](https://github.com/haydenbleasel/next-forge/pull/205) ([@000-KunalPal](https://github.com/000-KunalPal))
+- fix: Remove duplicate "is" in
+  text [#205](https://github.com/haydenbleasel/next-forge/pull/205) ([@000-KunalPal](https://github.com/000-KunalPal))
 
 #### Authors: 1
 
@@ -1041,7 +1082,8 @@ Thank you, Yam Catzenelson ([@yamz8](https://github.com/yamz8)), for all your wo
 
 #### 🐛 Bug Fix
 
-- Update README.md [#204](https://github.com/haydenbleasel/next-forge/pull/204) ([@yamz8](https://github.com/yamz8) [@haydenbleasel](https://github.com/haydenbleasel))
+- Update
+  README.md [#204](https://github.com/haydenbleasel/next-forge/pull/204) ([@yamz8](https://github.com/yamz8) [@haydenbleasel](https://github.com/haydenbleasel))
 
 #### Authors: 2
 
@@ -1140,7 +1182,8 @@ Thank you, flo merian ([@fmerian](https://github.com/fmerian)), for all your wor
 
 #### 📝 Documentation
 
-- Switch docs to Mintlify [#197](https://github.com/haydenbleasel/next-forge/pull/197) ([@fmerian](https://github.com/fmerian) [@haydenbleasel](https://github.com/haydenbleasel))
+- Switch docs to
+  Mintlify [#197](https://github.com/haydenbleasel/next-forge/pull/197) ([@fmerian](https://github.com/fmerian) [@haydenbleasel](https://github.com/haydenbleasel))
 
 #### Authors: 2
 
@@ -1153,7 +1196,8 @@ Thank you, flo merian ([@fmerian](https://github.com/fmerian)), for all your wor
 
 #### 🚀 Enhancement
 
-- 198 improve package isolation [#200](https://github.com/haydenbleasel/next-forge/pull/200) ([@haydenbleasel](https://github.com/haydenbleasel))
+- 198 improve package
+  isolation [#200](https://github.com/haydenbleasel/next-forge/pull/200) ([@haydenbleasel](https://github.com/haydenbleasel))
 
 #### Authors: 1
 
@@ -1201,7 +1245,8 @@ Thank you, flo merian ([@fmerian](https://github.com/fmerian)), for all your wor
 
 #### ⚠️ Pushed to `main`
 
-- Merge branch 'main' of https://github.com/haydenbleasel/next-forge ([@haydenbleasel](https://github.com/haydenbleasel))
+- Merge branch 'main'
+  of https://github.com/haydenbleasel/next-forge ([@haydenbleasel](https://github.com/haydenbleasel))
 - Redesign hero ([@haydenbleasel](https://github.com/haydenbleasel))
 - Update installer.tsx ([@haydenbleasel](https://github.com/haydenbleasel))
 - Add logo.dev attribution ([@haydenbleasel](https://github.com/haydenbleasel))
@@ -1233,7 +1278,8 @@ Thank you, flo merian ([@fmerian](https://github.com/fmerian)), for all your wor
 
 #### 📝 Documentation
 
-- Co-author: Drizzle [#168](https://github.com/haydenbleasel/next-forge/pull/168) ([@haydenbleasel](https://github.com/haydenbleasel))
+- Co-author:
+  Drizzle [#168](https://github.com/haydenbleasel/next-forge/pull/168) ([@haydenbleasel](https://github.com/haydenbleasel))
 
 #### Authors: 1
 
@@ -1255,15 +1301,18 @@ Thanks for all your work!
 
 #### 🚀 Enhancement
 
-- feat: Add Arcjet security [#187](https://github.com/haydenbleasel/next-forge/pull/187) ([@davidmytton](https://github.com/davidmytton) [@haydenbleasel](https://github.com/haydenbleasel))
+- feat: Add Arcjet
+  security [#187](https://github.com/haydenbleasel/next-forge/pull/187) ([@davidmytton](https://github.com/davidmytton) [@haydenbleasel](https://github.com/haydenbleasel))
 
 #### 🐛 Bug Fix
 
-- chore(windows_setup): add windows setup script [#196](https://github.com/haydenbleasel/next-forge/pull/196) ([@ktfth](https://github.com/ktfth))
+- chore(windows_setup): add windows setup
+  script [#196](https://github.com/haydenbleasel/next-forge/pull/196) ([@ktfth](https://github.com/ktfth))
 
 #### 📝 Documentation
 
-- add docs for switching to Prisma Postgres [#192](https://github.com/haydenbleasel/next-forge/pull/192) ([@nikolasburk](https://github.com/nikolasburk))
+- add docs for switching to Prisma
+  Postgres [#192](https://github.com/haydenbleasel/next-forge/pull/192) ([@nikolasburk](https://github.com/nikolasburk))
 
 #### Authors: 4
 
@@ -1369,7 +1418,8 @@ Thank you, Alfredo José ([@fredojbg](https://github.com/fredojbg)), for all you
 
 #### 🐛 Bug Fix
 
-- feat: add repo/env to app [#188](https://github.com/haydenbleasel/next-forge/pull/188) ([@fredojbg](https://github.com/fredojbg) [@haydenbleasel](https://github.com/haydenbleasel))
+- feat: add repo/env to
+  app [#188](https://github.com/haydenbleasel/next-forge/pull/188) ([@fredojbg](https://github.com/fredojbg) [@haydenbleasel](https://github.com/haydenbleasel))
 
 #### ⚠️ Pushed to `main`
 
@@ -1386,7 +1436,8 @@ Thank you, Alfredo José ([@fredojbg](https://github.com/fredojbg)), for all you
 
 #### 🐛 Bug Fix
 
-- Misc enhancements [#181](https://github.com/haydenbleasel/next-forge/pull/181) ([@haydenbleasel](https://github.com/haydenbleasel))
+- Misc
+  enhancements [#181](https://github.com/haydenbleasel/next-forge/pull/181) ([@haydenbleasel](https://github.com/haydenbleasel))
 
 #### Authors: 1
 
@@ -1410,7 +1461,8 @@ Thank you, Alfredo José ([@fredojbg](https://github.com/fredojbg)), for all you
 
 #### 🚀 Enhancement
 
-- 157 improve env var handling [#171](https://github.com/haydenbleasel/next-forge/pull/171) ([@haydenbleasel](https://github.com/haydenbleasel))
+- 157 improve env var
+  handling [#171](https://github.com/haydenbleasel/next-forge/pull/171) ([@haydenbleasel](https://github.com/haydenbleasel))
 
 #### Authors: 1
 
@@ -1426,7 +1478,8 @@ Thank you, Ankur Tyagi ([@tyaga001](https://github.com/tyaga001)), for all your 
 
 #### 🐛 Bug Fix
 
-- Add CodeRabbit AI Code Review Integration [#172](https://github.com/haydenbleasel/next-forge/pull/172) ([@tyaga001](https://github.com/tyaga001))
+- Add CodeRabbit AI Code Review
+  Integration [#172](https://github.com/haydenbleasel/next-forge/pull/172) ([@tyaga001](https://github.com/tyaga001))
 
 #### Authors: 1
 
@@ -1475,7 +1528,8 @@ Thank you, Ankur Tyagi ([@tyaga001](https://github.com/tyaga001)), for all your 
 
 #### 🚀 Enhancement
 
-- Create CLI [#166](https://github.com/haydenbleasel/next-forge/pull/166) ([@haydenbleasel](https://github.com/haydenbleasel))
+- Create
+  CLI [#166](https://github.com/haydenbleasel/next-forge/pull/166) ([@haydenbleasel](https://github.com/haydenbleasel))
 
 #### Authors: 1
 
@@ -1487,7 +1541,8 @@ Thank you, Ankur Tyagi ([@tyaga001](https://github.com/tyaga001)), for all your 
 
 #### 🚀 Enhancement
 
-- Add Unit Tests [#165](https://github.com/haydenbleasel/next-forge/pull/165) ([@haydenbleasel](https://github.com/haydenbleasel))
+- Add Unit
+  Tests [#165](https://github.com/haydenbleasel/next-forge/pull/165) ([@haydenbleasel](https://github.com/haydenbleasel))
 
 #### Authors: 1
 
@@ -1549,7 +1604,9 @@ Thank you, Ankur Tyagi ([@tyaga001](https://github.com/tyaga001)), for all your 
 
 #### 🚀 Enhancement
 
-- Debugging [#164](https://github.com/haydenbleasel/next-forge/pull/164) ([@haydenbleasel](https://github.com/haydenbleasel))
+-
+
+Debugging [#164](https://github.com/haydenbleasel/next-forge/pull/164) ([@haydenbleasel](https://github.com/haydenbleasel))
 
 #### Authors: 1
 
@@ -1565,7 +1622,8 @@ Thank you, Ankur Tyagi ([@tyaga001](https://github.com/tyaga001)), for all your 
 
 #### 🔩 Dependency Updates
 
-- Bump cmdk from 1.0.1 to 1.0.3 [#162](https://github.com/haydenbleasel/next-forge/pull/162) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- Bump cmdk from 1.0.1 to
+  1.0.3 [#162](https://github.com/haydenbleasel/next-forge/pull/162) ([@dependabot[bot]](https://github.com/dependabot[bot]))
 
 #### Authors: 2
 
@@ -1590,11 +1648,13 @@ Thank you, Ankur Tyagi ([@tyaga001](https://github.com/tyaga001)), for all your 
 
 #### ⚠️ Pushed to `main`
 
-- Misc fixes, add tooltip to installer copy button ([@haydenbleasel](https://github.com/haydenbleasel))
+- Misc fixes, add tooltip to installer copy
+  button ([@haydenbleasel](https://github.com/haydenbleasel))
 
 #### 🔩 Dependency Updates
 
-- Bump ws from 7.5.9 to 8.18.0 [#160](https://github.com/haydenbleasel/next-forge/pull/160) ([@dependabot[bot]](https://github.com/dependabot[bot]))
+- Bump ws from 7.5.9 to
+  8.18.0 [#160](https://github.com/haydenbleasel/next-forge/pull/160) ([@dependabot[bot]](https://github.com/dependabot[bot]))
 
 #### Authors: 2
 
@@ -1643,7 +1703,8 @@ Thank you, Ankur Tyagi ([@tyaga001](https://github.com/tyaga001)), for all your 
 
 #### 🚀 Enhancement
 
-- Improve Dark Mode support [#159](https://github.com/haydenbleasel/next-forge/pull/159) ([@haydenbleasel](https://github.com/haydenbleasel))
+- Improve Dark Mode
+  support [#159](https://github.com/haydenbleasel/next-forge/pull/159) ([@haydenbleasel](https://github.com/haydenbleasel))
 
 #### Authors: 1
 
@@ -1668,7 +1729,8 @@ Thank you, Ankur Tyagi ([@tyaga001](https://github.com/tyaga001)), for all your 
 
 #### 🚀 Enhancement
 
-- Improve SEO [#158](https://github.com/haydenbleasel/next-forge/pull/158) ([@haydenbleasel](https://github.com/haydenbleasel))
+- Improve
+  SEO [#158](https://github.com/haydenbleasel/next-forge/pull/158) ([@haydenbleasel](https://github.com/haydenbleasel))
 
 #### Authors: 1
 
@@ -1813,7 +1875,8 @@ Thank you, Ankur Tyagi ([@tyaga001](https://github.com/tyaga001)), for all your 
 
 #### 🚀 Enhancement
 
-- Add Vercel Feature Flags [#154](https://github.com/haydenbleasel/next-forge/pull/154) ([@haydenbleasel](https://github.com/haydenbleasel))
+- Add Vercel Feature
+  Flags [#154](https://github.com/haydenbleasel/next-forge/pull/154) ([@haydenbleasel](https://github.com/haydenbleasel))
 
 #### Authors: 1
 
@@ -1825,7 +1888,8 @@ Thank you, Ankur Tyagi ([@tyaga001](https://github.com/tyaga001)), for all your 
 
 #### 🚀 Enhancement
 
-- Implement Posthog [#156](https://github.com/haydenbleasel/next-forge/pull/156) ([@haydenbleasel](https://github.com/haydenbleasel))
+- Implement
+  Posthog [#156](https://github.com/haydenbleasel/next-forge/pull/156) ([@haydenbleasel](https://github.com/haydenbleasel))
 
 #### Authors: 1
 
@@ -1874,7 +1938,9 @@ Thank you, Ankur Tyagi ([@tyaga001](https://github.com/tyaga001)), for all your 
 
 #### 🐛 Bug Fix
 
-- Docs [#155](https://github.com/haydenbleasel/next-forge/pull/155) ([@haydenbleasel](https://github.com/haydenbleasel))
+-
+
+Docs [#155](https://github.com/haydenbleasel/next-forge/pull/155) ([@haydenbleasel](https://github.com/haydenbleasel))
 
 #### ⚠️ Pushed to `main`
 
@@ -1926,7 +1992,9 @@ Thank you, Ankur Tyagi ([@tyaga001](https://github.com/tyaga001)), for all your 
 
 #### 🚀 Enhancement
 
-- 2.2 [#152](https://github.com/haydenbleasel/next-forge/pull/152) ([@haydenbleasel](https://github.com/haydenbleasel))
+-
+
+2.2 [#152](https://github.com/haydenbleasel/next-forge/pull/152) ([@haydenbleasel](https://github.com/haydenbleasel))
 
 #### Authors: 1
 
@@ -1938,7 +2006,9 @@ Thank you, Ankur Tyagi ([@tyaga001](https://github.com/tyaga001)), for all your 
 
 #### 🚀 Enhancement
 
-- 2.1 [#151](https://github.com/haydenbleasel/next-forge/pull/151) ([@haydenbleasel](https://github.com/haydenbleasel))
+-
+
+2.1 [#151](https://github.com/haydenbleasel/next-forge/pull/151) ([@haydenbleasel](https://github.com/haydenbleasel))
 
 #### Authors: 1
 
@@ -1986,7 +2056,8 @@ Thank you, Ankur Tyagi ([@tyaga001](https://github.com/tyaga001)), for all your 
 
 #### 🐛 Bug Fix
 
-- Demo fixes [#150](https://github.com/haydenbleasel/next-forge/pull/150) ([@haydenbleasel](https://github.com/haydenbleasel))
+- Demo
+  fixes [#150](https://github.com/haydenbleasel/next-forge/pull/150) ([@haydenbleasel](https://github.com/haydenbleasel))
 
 #### Authors: 1
 
@@ -2022,7 +2093,8 @@ Thank you, Ankur Tyagi ([@tyaga001](https://github.com/tyaga001)), for all your 
 
 #### 💥 Breaking Change
 
-- Version 2 [#149](https://github.com/haydenbleasel/next-forge/pull/149) ([@haydenbleasel](https://github.com/haydenbleasel))
+- Version
+  2 [#149](https://github.com/haydenbleasel/next-forge/pull/149) ([@haydenbleasel](https://github.com/haydenbleasel))
 
 #### Authors: 1
 
@@ -2034,7 +2106,9 @@ Thank you, Ankur Tyagi ([@tyaga001](https://github.com/tyaga001)), for all your 
 
 #### 🚀 Enhancement
 
-- 1.2.0 [#144](https://github.com/haydenbleasel/next-forge/pull/144) ([@haydenbleasel](https://github.com/haydenbleasel))
+-
+
+1.2.0 [#144](https://github.com/haydenbleasel/next-forge/pull/144) ([@haydenbleasel](https://github.com/haydenbleasel))
 
 #### Authors: 1
 

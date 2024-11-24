@@ -3,27 +3,28 @@ title: Documentation
 description: How the documentation is configured in next-forge.
 ---
 
-import { Authors } from '/snippets/authors.mdx';
+
+import {Authors} from '/snippets/authors.mdx';
 
 <Authors data={[{
-  user: {
-    name: 'Hayden Bleasel',
-    id: 'haydenbleasel',
-  },
-  company: {
-    name: 'next-forge',
-    id: 'next-forge',
-  },
+    user: {
+        name: 'Hayden Bleasel',
+        id: 'haydenbleasel',
+    },
+    company: {
+        name: 'next-forge',
+        id: 'next-forge',
+    },
 }, {
-  user: {
-    name: 'Flo Merian',
-    id: 'fmerian',
-  },
-  company: {
-    name: 'Mintlify',
-    id: 'mintlify',
-  },
-}]} />
+    user: {
+        name: 'Flo Merian',
+        id: 'fmerian',
+    },
+    company: {
+        name: 'Mintlify',
+        id: 'mintlify',
+    },
+}]}/>
 
 next-forge uses [Mintlify](https://mintlify.com) to generate beautiful docs. Each page is a `.mdx` file, written in Markdown, with built-in UI components and API playground.
 
@@ -60,10 +61,12 @@ To add a page to the sidebar, you'll need to define it in the `mint.json` file i
 
 You can build the docs you want with advanced features.
 
-<Card title="Global Settings" icon="wrench" href="https://mintlify.com/docs/settings/global" horizontal>
-  Customize your documentation using the mint.json file
+<Card title="Global Settings" icon="wrench" href="https://mintlify.com/docs/settings/global"
+      horizontal>
+    Customize your documentation using the mint.json file
 </Card>
 
-<Card title="Components" icon="shapes" href="https://mintlify.com/docs/content/components" horizontal>
-  Explore the variety of components available
+<Card title="Components" icon="shapes" href="https://mintlify.com/docs/content/components"
+      horizontal>
+    Explore the variety of components available
 </Card>

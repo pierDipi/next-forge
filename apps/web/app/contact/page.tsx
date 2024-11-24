@@ -1,6 +1,6 @@
-import { createMetadata } from '@repo/seo/metadata';
-import type { Metadata } from 'next';
-import { ContactForm } from './components/contact-form';
+import {createMetadata} from '@repo/seo/metadata';
+import type {Metadata} from 'next';
+import {ContactForm} from './components/contact-form';
 
 const title = 'Contact';
 const description =
@@ -11,6 +11,6 @@ export const metadata: Metadata = createMetadata({
   description,
 });
 
-const Contact = () => <ContactForm />;
+const Contact = () => <ContactForm/>;
 
 export default Contact;

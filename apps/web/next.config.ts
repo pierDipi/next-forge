@@ -1,9 +1,9 @@
-import { withContentCollections } from '@content-collections/next';
-import { env } from '@repo/env';
-import { config, withAnalyzer, withSentry } from '@repo/next-config';
-import type { NextConfig } from 'next';
+import {withContentCollections} from '@content-collections/next';
+import {env} from '@repo/env';
+import {config, withAnalyzer, withSentry} from '@repo/next-config';
+import type {NextConfig} from 'next';
 
-let nextConfig: NextConfig = { ...config };
+let nextConfig: NextConfig = {...config};
 
 if (process.env.NODE_ENV === 'production') {
   const redirects: NextConfig['redirects'] = async () => [

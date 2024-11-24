@@ -4,8 +4,8 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@repo/design-system/components/ui/accordion';
-import { Button } from '@repo/design-system/components/ui/button';
-import { PhoneCall } from 'lucide-react';
+import {Button} from '@repo/design-system/components/ui/button';
+import {PhoneCall} from 'lucide-react';
 import Link from 'next/link';
 
 export const FAQ = () => (
@@ -18,7 +18,8 @@ export const FAQ = () => (
               <h4 className="max-w-xl text-left font-regular text-3xl tracking-tighter md:text-5xl">
                 This is the start of something new
               </h4>
-              <p className="max-w-xl text-left text-lg text-muted-foreground leading-relaxed tracking-tight lg:max-w-lg">
+              <p
+                className="max-w-xl text-left text-lg text-muted-foreground leading-relaxed tracking-tight lg:max-w-lg">
                 Managing a small business today is already tough. Avoid further
                 complications by ditching outdated, tedious trade methods. Our
                 goal is to streamline SMB trade, making it easier and faster
@@ -28,14 +29,14 @@ export const FAQ = () => (
             <div className="">
               <Button className="gap-4" variant="outline" asChild>
                 <Link href="/contact">
-                  Any questions? Reach out <PhoneCall className="h-4 w-4" />
+                  Any questions? Reach out <PhoneCall className="h-4 w-4"/>
                 </Link>
               </Button>
             </div>
           </div>
         </div>
         <Accordion type="single" collapsible className="w-full">
-          {Array.from({ length: 8 }).map((_, index) => (
+          {Array.from({length: 8}).map((_, index) => (
             <AccordionItem key={index} value={`index-${index}`}>
               <AccordionTrigger>
                 This is the start of something new

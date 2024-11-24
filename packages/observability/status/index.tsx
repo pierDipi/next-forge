@@ -1,6 +1,6 @@
 import 'server-only';
-import { env } from '@repo/env';
-import { getStatus } from './get';
+import {env} from '@repo/env';
+import {getStatus} from './get';
 
 export const Status = async () => {
   let statusColor = 'bg-success';

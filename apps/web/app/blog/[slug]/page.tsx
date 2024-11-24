@@ -1,14 +1,14 @@
-import { Mdx } from '@/components/mdx';
-import { Sidebar } from '@/components/sidebar';
-import { ArrowLeftIcon } from '@radix-ui/react-icons';
-import { env } from '@repo/env';
-import { type BlogPosting, JsonLd, type WithContext } from '@repo/seo/json-ld';
-import { createMetadata } from '@repo/seo/metadata';
-import { allPosts } from 'content-collections';
-import type { Metadata } from 'next';
+import {Mdx} from '@/components/mdx';
+import {Sidebar} from '@/components/sidebar';
+import {ArrowLeftIcon} from '@radix-ui/react-icons';
+import {env} from '@repo/env';
+import {type BlogPosting, JsonLd, type WithContext} from '@repo/seo/json-ld';
+import {createMetadata} from '@repo/seo/metadata';
+import {allPosts} from 'content-collections';
+import type {Metadata} from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { notFound } from 'next/navigation';
+import {notFound} from 'next/navigation';
 import Balancer from 'react-wrap-balancer';
 
 type BlogPostProperties = {
@@ -18,10 +18,10 @@ type BlogPostProperties = {
 };
 
 export const generateMetadata = async ({
-  params,
-}: BlogPostProperties): Promise<Metadata> => {
-  const { slug } = await params;
-  const page = allPosts.find(({ _meta }) => _meta.path === slug);
+                                         params,
+                                       }: BlogPostProperties): Promise<Metadata> => {
+  const {slug} = await params;
+  const page = allPosts.find(({_meta}) => _meta.path === slug);
 
   if (!page) {
     return {};
@@ -39,9 +39,9 @@ export const generateStaticParams = (): { slug: string }[] =>
     slug: page._meta.path,
   }));
 
-const BlogPost = async ({ params }: BlogPostProperties) => {
-  const { slug } = await params;
-  const page = allPosts.find(({ _meta }) => _meta.path === slug);
+const BlogPost = async ({params}: BlogPostProperties) => {
+  const {slug} = await params;
+  const page = allPosts.find(({_meta}) => _meta.path === slug);
 
   if (!page) {
     notFound();
@@ -68,13 +68,13 @@ const BlogPost = async ({ params }: BlogPostProperties) => {
 
   return (
     <>
-      <JsonLd code={jsonLd} />
+      <JsonLd code={jsonLd}/>
       <div className="container py-16">
         <Link
           className="mb-4 inline-flex items-center gap-1 text-muted-foreground text-sm focus:underline focus:outline-none"
           href="/blog"
         >
-          <ArrowLeftIcon className="h-4 w-4" />
+          <ArrowLeftIcon className="h-4 w-4"/>
           Back to Blog
         </Link>
         <h1 className="scroll-m-20 font-extrabold text-4xl tracking-tight lg:text-5xl">
@@ -97,7 +97,7 @@ const BlogPost = async ({ params }: BlogPostProperties) => {
         ) : undefined}
         <div className="mt-16 flex flex-col items-start gap-8 sm:flex-row">
           <div className="sm:flex-1">
-            <Mdx code={page.body} />
+            <Mdx code={page.body}/>
           </div>
           <div className="sticky top-24 hidden shrink-0 md:block">
             <Sidebar

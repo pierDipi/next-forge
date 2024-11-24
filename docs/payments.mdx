@@ -57,7 +57,7 @@ export default RootLayout;
 ```
 
 2. Add the same script to the website in `apps/web/app/layout.tsx`.
-3. Prevent common fraud patterns by using [Arcjet](/security/application) [IP address analysis](https://docs.arcjet.com/reference/nextjs#ip-analysis) to [block requests from VPNs and proxies](https://docs.arcjet.com/blueprints/vpn-proxy-detection). These are commonly used by fraudsters to hide their location, but have legitimate uses as well so are not blocked by default. You could simply block these users, or you could adjust the checkout process to require approval before processing their payment. 
+3. Prevent common fraud patterns by using [Arcjet](/security/application) [IP address analysis](https://docs.arcjet.com/reference/nextjs#ip-analysis) to [block requests from VPNs and proxies](https://docs.arcjet.com/blueprints/vpn-proxy-detection). These are commonly used by fraudsters to hide their location, but have legitimate uses as well so are not blocked by default. You could simply block these users, or you could adjust the checkout process to require approval before processing their payment.
 
 For example, in `apps/app/app/(authenticated)/layout.tsx` you could add this after the call to `aj.protect()`:
 

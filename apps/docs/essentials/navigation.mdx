@@ -14,29 +14,29 @@ Our navigation syntax is recursive which means you can make nested navigation gr
 
 <CodeGroup>
 
-```json Regular Navigation
-"navigation": [
+    ```json Regular Navigation
+    "navigation": [
     {
         "group": "Getting Started",
         "pages": ["quickstart"]
     }
-]
-```
+    ]
+    ```
 
-```json Nested Navigation
-"navigation": [
+    ```json Nested Navigation
+    "navigation": [
     {
         "group": "Getting Started",
         "pages": [
-            "quickstart",
-            {
-                "group": "Nested Reference Pages",
-                "pages": ["nested-reference-page"]
-            }
+        "quickstart",
+    {
+        "group": "Nested Reference Pages",
+        "pages": ["nested-reference-page"]
+    }
         ]
     }
-]
-```
+    ]
+    ```
 
 </CodeGroup>
 
@@ -48,7 +48,9 @@ For example, to have a page at `https://yoursite.com/your-folder/your-page` you 
 
 <Warning>
 
-You cannot use `api` for the name of a folder unless you nest it inside another folder. Mintlify uses Next.js which reserves the top-level `api` folder for internal server calls. A folder name such as `api-reference` would be accepted.
+    You cannot use `api` for the name of a folder unless you nest it inside another folder. Mintlify
+    uses Next.js which reserves the top-level `api` folder for internal server calls. A folder name
+    such as `api-reference` would be accepted.
 
 </Warning>
 

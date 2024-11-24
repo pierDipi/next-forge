@@ -3,27 +3,29 @@ title: IP Geolocation
 description: Accessing IP geolocation data in your application.
 ---
 
-import { Authors } from '/snippets/authors.mdx';
+
+
+import {Authors} from '/snippets/authors.mdx';
 
 <Authors data={[{
-  user: {
-    name: 'Hayden Bleasel',
-    id: 'haydenbleasel',
-  },
-  company: {
-    name: 'next-forge',
-    id: 'next-forge',
-  },
+    user: {
+        name: 'Hayden Bleasel',
+        id: 'haydenbleasel',
+    },
+    company: {
+        name: 'next-forge',
+        id: 'next-forge',
+    },
 }, {
-  user: {
-    name: 'David Mytton',
-    id: 'davidmytton',
-  },
-  company: {
-    name: 'Arcjet',
-    id: 'arcjet',
-  },
-}]} />
+    user: {
+        name: 'David Mytton',
+        id: 'davidmytton',
+    },
+    company: {
+        name: 'Arcjet',
+        id: 'arcjet',
+    },
+}]}/>
 
 next-forge uses [Arcjet](https://arcjet.com) for [application security](/security/application) which includes [IP details and geolocation information](https://docs.arcjet.com/reference/nextjs#ip-analysis) you can use in your application.
 
@@ -67,5 +69,7 @@ Next.js does not allow passing data from [the root layout](https://nextjs.org/do
 See the Arcjet documentation on how to call `aj.protect()` in [route handlers](https://docs.arcjet.com/reference/nextjs#protect), [pages / server components](https://docs.arcjet.com/reference/nextjs#pages--page-components), and [server actions](https://docs.arcjet.com/reference/nextjs#server-actions).
 
 <Note>
-  If you remove the Arcjet call from `apps/app/app/(authenticated)/layout.tsx` or `middleware.ts` it will no longer run on every request. You will need to call `aj.protect()` everywhere you wish to apply Arcjet rules, even if you don't need the IP details.
+    If you remove the Arcjet call from `apps/app/app/(authenticated)/layout.tsx` or `middleware.ts`
+    it will no longer run on every request. You will need to call `aj.protect()` everywhere you wish
+    to apply Arcjet rules, even if you don't need the IP details.
 </Note>

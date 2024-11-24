@@ -1,11 +1,11 @@
-import { Mdx } from '@/components/mdx';
-import { Sidebar } from '@/components/sidebar';
-import { ArrowLeftIcon } from '@radix-ui/react-icons';
-import { createMetadata } from '@repo/seo/metadata';
-import { allLegals } from 'content-collections';
-import type { Metadata } from 'next';
+import {Mdx} from '@/components/mdx';
+import {Sidebar} from '@/components/sidebar';
+import {ArrowLeftIcon} from '@radix-ui/react-icons';
+import {createMetadata} from '@repo/seo/metadata';
+import {allLegals} from 'content-collections';
+import type {Metadata} from 'next';
 import Link from 'next/link';
-import { notFound } from 'next/navigation';
+import {notFound} from 'next/navigation';
 import Balancer from 'react-wrap-balancer';
 
 type LegalPageProperties = {
@@ -15,10 +15,10 @@ type LegalPageProperties = {
 };
 
 export const generateMetadata = async ({
-  params,
-}: LegalPageProperties): Promise<Metadata> => {
-  const { slug } = await params;
-  const page = allLegals.find(({ _meta }) => _meta.path === slug);
+                                         params,
+                                       }: LegalPageProperties): Promise<Metadata> => {
+  const {slug} = await params;
+  const page = allLegals.find(({_meta}) => _meta.path === slug);
 
   if (!page) {
     return {};
@@ -35,9 +35,9 @@ export const generateStaticParams = (): { slug: string }[] =>
     slug: page._meta.path,
   }));
 
-const LegalPage = async ({ params }: LegalPageProperties) => {
-  const { slug } = await params;
-  const page = allLegals.find(({ _meta }) => _meta.path === slug);
+const LegalPage = async ({params}: LegalPageProperties) => {
+  const {slug} = await params;
+  const page = allLegals.find(({_meta}) => _meta.path === slug);
 
   if (!page) {
     notFound();
@@ -49,7 +49,7 @@ const LegalPage = async ({ params }: LegalPageProperties) => {
         className="mb-4 inline-flex items-center gap-1 text-sm text-white/50 decoration-white/30 transition-colors hover:text-white/70 focus:text-white focus:underline focus:outline-none"
         href="/blog"
       >
-        <ArrowLeftIcon className="h-4 w-4" />
+        <ArrowLeftIcon className="h-4 w-4"/>
         Back to Blog
       </Link>
       <h1 className="scroll-m-20 font-extrabold text-4xl tracking-tight lg:text-5xl">
@@ -60,7 +60,7 @@ const LegalPage = async ({ params }: LegalPageProperties) => {
       </p>
       <div className="mt-16 flex flex-col items-start gap-8 sm:flex-row">
         <div className="sm:flex-1">
-          <Mdx code={page.body} />
+          <Mdx code={page.body}/>
         </div>
         <div className="sticky top-24 hidden shrink-0 md:block">
           <Sidebar

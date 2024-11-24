@@ -1,6 +1,7 @@
 # Contributing to This Project
 
-Thank you for your interest in contributing! This document outlines the process for contributing to our project.
+Thank you for your interest in contributing! This document outlines the process for contributing to
+our project.
 
 ## Getting Started
 
@@ -43,6 +44,7 @@ Feel free to open an issue for questions or join our discussions. We're here to 
 
 ## Code of Conduct
 
-Please note that this project follows a Code of Conduct. By participating, you are expected to uphold this code.
+Please note that this project follows a Code of Conduct. By participating, you are expected to
+uphold this code.
 
 Thank you for contributing!

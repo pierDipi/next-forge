@@ -1,11 +1,11 @@
-"use client";
+'use client';
 
-import {useState} from "react";
-import {User} from "next-auth";
-import {currentUser} from "./index";
+import type {User} from 'next-auth';
+import {useState} from 'react';
+import {currentUser} from './index';
 
 export function useUser() {
-    const [user, setUser] = useState<User | undefined>(undefined);
-    currentUser().then((u) => setUser(u))
-    return user
+  const [user, setUser] = useState<User | undefined>(undefined);
+  currentUser().then((u) => setUser(u));
+  return user;
 }

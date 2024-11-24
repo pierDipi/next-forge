@@ -1,23 +1,18 @@
 {
   "$schema": "https://mintlify.com/schema.json",
-
   "name": "next-forge docs",
-
   "logo": {
     "dark": "/images/logo-dark.svg",
     "light": "/images/logo-light.svg"
   },
-
-  "background": { "style": "windows" },
-
+  "background": {
+    "style": "windows"
+  },
   "codeBlock": {
     "mode": "auto"
   },
-
   "favicon": "/images/icon.png",
-
   "layout": "topnav",
-
   "colors": {
     "primary": "#f35815",
     "light": "#f35815",
@@ -27,16 +22,13 @@
       "to": "#f35815"
     }
   },
-
   "topbarCtaButton": {
     "type": "github",
     "url": "https://github.com/haydenbleasel/next-forge"
   },
-
   "search": {
     "prompt": "Search or ask..."
   },
-
   "navigation": [
     {
       "group": "Getting Started",
@@ -56,18 +48,27 @@
     },
     {
       "group": "Structure",
-      "pages": ["structure/apps", "structure/packages"]
+      "pages": [
+        "structure/apps",
+        "structure/packages"
+      ]
     },
     {
       "group": "Features",
       "pages": [
         {
           "group": "Analytics",
-          "pages": ["analytics/web", "analytics/product"]
+          "pages": [
+            "analytics/web",
+            "analytics/product"
+          ]
         },
         {
           "group": "Authentication",
-          "pages": ["authentication/overview", "authentication/authjs"]
+          "pages": [
+            "authentication/overview",
+            "authentication/authjs"
+          ]
         },
         "blog",
         "bundle-analysis",
@@ -96,7 +97,10 @@
         "documentation",
         {
           "group": "Email",
-          "pages": ["email/clerk", "email/resend"]
+          "pages": [
+            "email/clerk",
+            "email/resend"
+          ]
         },
         "env",
         "flags",
@@ -123,13 +127,16 @@
         "webhooks",
         {
           "group": "SEO",
-          "pages": ["seo/metadata", "seo/json-ld", "seo/sitemap"]
+          "pages": [
+            "seo/metadata",
+            "seo/json-ld",
+            "seo/sitemap"
+          ]
         },
         "testing"
       ]
     }
   ],
-
   "footerSocials": {
     "x": "https://x.com/haydenbleasel",
     "github": "https://github.com/haydenbleasel/next-forge",

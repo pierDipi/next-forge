@@ -1,13 +1,13 @@
-import { defineCollection, defineConfig } from '@content-collections/core';
-import { compileMDX } from '@content-collections/mdx';
+import {defineCollection, defineConfig} from '@content-collections/core';
+import {compileMDX} from '@content-collections/mdx';
 import {
-  type RehypeCodeOptions,
   rehypeCode,
+  type RehypeCodeOptions,
   remarkGfm,
   remarkHeading,
 } from 'fumadocs-core/mdx-plugins';
 import readingTime from 'reading-time';
-import { sqip } from 'sqip';
+import {sqip} from 'sqip';
 
 const rehypeCodeOptions: RehypeCodeOptions = {
   themes: {

@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { twMerge } from 'tailwind-merge';
+import {twMerge} from 'tailwind-merge';
 import ApiImage from './api.png';
 import AppImage from './app.png';
 import DocsImage from './docs.png';
@@ -58,7 +58,8 @@ export const Apps = () => (
       <h2 className="font-medium text-base/7 text-neutral-500 dark:text-neutral-400">
         Deploy at scale
       </h2>
-      <p className="mt-2 max-w-lg text-pretty font-bold text-3xl text-neutral-950 tracking-tighter sm:text-4xl sm:text-5xl dark:text-white">
+      <p
+        className="mt-2 max-w-lg text-pretty font-bold text-3xl text-neutral-950 tracking-tighter sm:text-4xl sm:text-5xl dark:text-white">
         Get from zero to production in minutes.
       </p>
       <div className="mt-10 grid grid-cols-1 gap-4 sm:mt-16 lg:grid-cols-6 lg:grid-rows-2">
@@ -88,7 +89,8 @@ export const Apps = () => (
                 index === 5 && 'lg:rounded-br-[calc(2rem+1px)]'
               )}
             >
-              <div className="h-48 overflow-hidden border-b bg-neutral-50 p-8 md:h-80 dark:bg-neutral-950">
+              <div
+                className="h-48 overflow-hidden border-b bg-neutral-50 p-8 md:h-80 dark:bg-neutral-950">
                 <Image
                   alt=""
                   src={app.image}
@@ -104,7 +106,8 @@ export const Apps = () => (
                 <h3 className="font-medium text-neutral-500 text-sm/4 dark:text-neutral-400">
                   {app.name}
                 </h3>
-                <p className="mt-2 font-semibold text-lg/7 text-neutral-950 tracking-tight dark:text-white">
+                <p
+                  className="mt-2 font-semibold text-lg/7 text-neutral-950 tracking-tight dark:text-white">
                   {app.title}
                 </p>
                 <p className="mt-2 max-w-lg text-neutral-500 text-sm/6 dark:text-neutral-400">

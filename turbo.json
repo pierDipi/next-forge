@@ -1,10 +1,18 @@
 {
   "$schema": "https://turbo.build/schema.json",
-  "globalDependencies": ["**/.env.*local"],
+  "globalDependencies": [
+    "**/.env.*local"
+  ],
   "tasks": {
     "build": {
-      "dependsOn": ["^build", "test"],
-      "outputs": [".next/**", "!.next/cache/**"],
+      "dependsOn": [
+        "^build",
+        "test"
+      ],
+      "outputs": [
+        ".next/**",
+        "!.next/cache/**"
+      ],
       "env": [
         "ARCJET_KEY",
         "BETTERSTACK_API_KEY",
@@ -23,13 +31,19 @@
       ]
     },
     "test": {
-      "dependsOn": ["^test"]
+      "dependsOn": [
+        "^test"
+      ]
     },
     "lint": {
-      "dependsOn": ["^lint"]
+      "dependsOn": [
+        "^lint"
+      ]
     },
     "analyze": {
-      "dependsOn": ["^analyze"]
+      "dependsOn": [
+        "^analyze"
+      ]
     },
     "dev": {
       "cache": false,

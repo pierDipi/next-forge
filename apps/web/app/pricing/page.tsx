@@ -1,6 +1,6 @@
-import { Button } from '@repo/design-system/components/ui/button';
-import { env } from '@repo/env';
-import { Check, Minus, MoveRight, PhoneCall } from 'lucide-react';
+import {Button} from '@repo/design-system/components/ui/button';
+import {env} from '@repo/env';
+import {Check, Minus, MoveRight, PhoneCall} from 'lucide-react';
 import Link from 'next/link';
 
 const Pricing = () => (
@@ -11,12 +11,13 @@ const Pricing = () => (
           <h2 className="max-w-xl text-center font-regular text-3xl tracking-tighter md:text-5xl">
             Prices that make sense!
           </h2>
-          <p className="max-w-xl text-center text-lg text-muted-foreground leading-relaxed tracking-tight">
+          <p
+            className="max-w-xl text-center text-lg text-muted-foreground leading-relaxed tracking-tight">
             Managing a small business today is already tough.
           </p>
         </div>
         <div className="grid w-full grid-cols-3 divide-x pt-20 text-left lg:grid-cols-4">
-          <div className="col-span-3 lg:col-span-1" />
+          <div className="col-span-3 lg:col-span-1"/>
           <div className="flex flex-col gap-2 px-3 py-1 md:px-6 md:py-4">
             <p className="text-2xl">Startup</p>
             <p className="text-muted-foreground text-sm">
@@ -29,7 +30,7 @@ const Pricing = () => (
             </p>
             <Button variant="outline" className="mt-8 gap-4" asChild>
               <Link href={env.NEXT_PUBLIC_APP_URL}>
-                Try it <MoveRight className="h-4 w-4" />
+                Try it <MoveRight className="h-4 w-4"/>
               </Link>
             </Button>
           </div>
@@ -45,7 +46,7 @@ const Pricing = () => (
             </p>
             <Button className="mt-8 gap-4" asChild>
               <Link href={env.NEXT_PUBLIC_APP_URL}>
-                Try it <MoveRight className="h-4 w-4" />
+                Try it <MoveRight className="h-4 w-4"/>
               </Link>
             </Button>
           </div>
@@ -61,52 +62,52 @@ const Pricing = () => (
             </p>
             <Button variant="outline" className="mt-8 gap-4" asChild>
               <Link href="/contact">
-                Contact us <PhoneCall className="h-4 w-4" />
+                Contact us <PhoneCall className="h-4 w-4"/>
               </Link>
             </Button>
           </div>
           <div className="col-span-3 px-3 py-4 lg:col-span-1 lg:px-6">
             <b>Features</b>
           </div>
-          <div />
-          <div />
-          <div />
+          <div/>
+          <div/>
+          <div/>
           {/* New Line */}
           <div className="col-span-3 px-3 py-4 lg:col-span-1 lg:px-6">SSO</div>
           <div className="flex justify-center px-3 py-1 md:px-6 md:py-4">
-            <Check className="h-4 w-4 text-primary" />
+            <Check className="h-4 w-4 text-primary"/>
           </div>
           <div className="flex justify-center px-3 py-1 md:px-6 md:py-4">
-            <Check className="h-4 w-4 text-primary" />
+            <Check className="h-4 w-4 text-primary"/>
           </div>
           <div className="flex justify-center px-3 py-1 md:px-6 md:py-4">
-            <Check className="h-4 w-4 text-primary" />
+            <Check className="h-4 w-4 text-primary"/>
           </div>
           {/* New Line */}
           <div className="col-span-3 px-3 py-4 lg:col-span-1 lg:px-6">
             AI Assistant
           </div>
           <div className="flex justify-center px-3 py-1 md:px-6 md:py-4">
-            <Minus className="h-4 w-4 text-muted-foreground" />
+            <Minus className="h-4 w-4 text-muted-foreground"/>
           </div>
           <div className="flex justify-center px-3 py-1 md:px-6 md:py-4">
-            <Check className="h-4 w-4 text-primary" />
+            <Check className="h-4 w-4 text-primary"/>
           </div>
           <div className="flex justify-center px-3 py-1 md:px-6 md:py-4">
-            <Check className="h-4 w-4 text-primary" />
+            <Check className="h-4 w-4 text-primary"/>
           </div>
           {/* New Line */}
           <div className="col-span-3 px-3 py-4 lg:col-span-1 lg:px-6">
             Version Control
           </div>
           <div className="flex justify-center px-3 py-1 md:px-6 md:py-4">
-            <Minus className="h-4 w-4 text-muted-foreground" />
+            <Minus className="h-4 w-4 text-muted-foreground"/>
           </div>
           <div className="flex justify-center px-3 py-1 md:px-6 md:py-4">
-            <Check className="h-4 w-4 text-primary" />
+            <Check className="h-4 w-4 text-primary"/>
           </div>
           <div className="flex justify-center px-3 py-1 md:px-6 md:py-4">
-            <Check className="h-4 w-4 text-primary" />
+            <Check className="h-4 w-4 text-primary"/>
           </div>
           {/* New Line */}
           <div className="col-span-3 px-3 py-4 lg:col-span-1 lg:px-6">
@@ -126,26 +127,26 @@ const Pricing = () => (
             Multiplayer Mode
           </div>
           <div className="flex justify-center px-3 py-1 md:px-6 md:py-4">
-            <Minus className="h-4 w-4 text-muted-foreground" />
+            <Minus className="h-4 w-4 text-muted-foreground"/>
           </div>
           <div className="flex justify-center px-3 py-1 md:px-6 md:py-4">
-            <Check className="h-4 w-4 text-primary" />
+            <Check className="h-4 w-4 text-primary"/>
           </div>
           <div className="flex justify-center px-3 py-1 md:px-6 md:py-4">
-            <Check className="h-4 w-4 text-primary" />
+            <Check className="h-4 w-4 text-primary"/>
           </div>
           {/* New Line */}
           <div className="col-span-3 px-3 py-4 lg:col-span-1 lg:px-6">
             Orchestration
           </div>
           <div className="flex justify-center px-3 py-1 md:px-6 md:py-4">
-            <Minus className="h-4 w-4 text-muted-foreground" />
+            <Minus className="h-4 w-4 text-muted-foreground"/>
           </div>
           <div className="flex justify-center px-3 py-1 md:px-6 md:py-4">
-            <Check className="h-4 w-4 text-primary" />
+            <Check className="h-4 w-4 text-primary"/>
           </div>
           <div className="flex justify-center px-3 py-1 md:px-6 md:py-4">
-            <Check className="h-4 w-4 text-primary" />
+            <Check className="h-4 w-4 text-primary"/>
           </div>
         </div>
       </div>
