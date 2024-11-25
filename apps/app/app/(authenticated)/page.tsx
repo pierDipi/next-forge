@@ -22,7 +22,6 @@ export const metadata: Metadata = {
 
 const App = async () => {
   const session = await auth();
-
   if (!session) {
     notFound();
   }

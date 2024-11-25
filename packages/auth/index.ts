@@ -1,5 +1,4 @@
 import NextAuth from 'next-auth';
-import {getSession} from 'next-auth/react';
 
 import {PrismaAdapter} from '@auth/prisma-adapter';
 
@@ -34,11 +33,3 @@ export const {handlers, signIn, signOut, auth} = NextAuth({
   },
 });
 
-export async function currentUser() {
-  const s = await currentUserSession();
-  return s?.user;
-}
-
-export async function currentUserSession() {
-  return getSession();
-}

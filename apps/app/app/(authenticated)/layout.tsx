@@ -1,4 +1,4 @@
-import {auth, currentUser} from '@repo/auth';
+import {auth} from '@repo/auth';
 import {SidebarProvider} from '@repo/design-system/components/ui/sidebar';
 import {showBetaFeature} from '@repo/feature-flags';
 import {redirect} from 'next/navigation';
@@ -10,10 +10,8 @@ type AppLayoutProperties = {
 };
 
 const AppLayout = async ({children}: AppLayoutProperties) => {
-  const authenticated = await auth();
-  const user = await currentUser();
-
-  if (!user || !authenticated) {
+  const session = await auth();
+  if (!session) {
     return redirect('/sign-in');
   }
 
