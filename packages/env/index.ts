@@ -41,6 +41,7 @@ const server: Parameters<typeof createEnv>[0]['server'] = {
 const client: Parameters<typeof createEnv>[0]['client'] = {
   NEXT_PUBLIC_APP_URL: z.string().min(1).url(),
   NEXT_PUBLIC_WEB_URL: z.string().min(1).url(),
+  NEXT_PUBLIC_API_URL: z.string().min(1).url().optional(),
   NEXT_PUBLIC_DOCS_URL: z.string().min(1).url(),
   NEXT_PUBLIC_GA_MEASUREMENT_ID: z.string().min(1).startsWith('G-'),
   NEXT_PUBLIC_POSTHOG_KEY: z.string().min(1).startsWith('phc_'),
@@ -81,6 +82,7 @@ export const env = createEnv({
     process.env.NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL,
     NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL,
     NEXT_PUBLIC_WEB_URL: process.env.NEXT_PUBLIC_WEB_URL,
+    NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL,
     NEXT_PUBLIC_DOCS_URL: process.env.NEXT_PUBLIC_DOCS_URL,
     NEXT_PUBLIC_GA_MEASUREMENT_ID: process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID,
     NEXT_PUBLIC_POSTHOG_KEY: process.env.NEXT_PUBLIC_POSTHOG_KEY,
