@@ -2,6 +2,8 @@ import 'server-only';
 
 import {PrismaClient} from '@prisma/client';
 
-export const database = new PrismaClient();
+const globalForPrisma = globalThis as unknown as { prisma: PrismaClient }
 
-export * from '@prisma/client';
+export const database = globalForPrisma.prisma || new PrismaClient()
+
+globalForPrisma.prisma = database

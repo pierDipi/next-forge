@@ -1,7 +1,9 @@
 import type {ReactNode} from 'react';
+import {SessionProvider} from "next-auth/react";
 
 type AuthProviderProps = {
   children: ReactNode;
 };
 
-export const AuthProvider = ({children}: AuthProviderProps) => children;
+export const AuthProvider = ({children}: AuthProviderProps) =>
+  <SessionProvider>{children}</SessionProvider>;

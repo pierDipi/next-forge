@@ -4,6 +4,7 @@ import {showBetaFeature} from '@repo/feature-flags';
 import {redirect} from 'next/navigation';
 import type {ReactNode} from 'react';
 import {PostHogIdentifier} from './components/posthog-identifier';
+import {log} from "@repo/observability/log";
 
 type AppLayoutProperties = {
   readonly children: ReactNode;

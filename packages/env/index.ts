@@ -2,7 +2,7 @@ import {createEnv} from '@t3-oss/env-nextjs';
 import {z} from 'zod';
 
 const server: Parameters<typeof createEnv>[0]['server'] = {
-  NEXTAUTH_SECRET: z.string().min(1).base64(),
+  NODE_ENV: z.enum(['development', 'production']).default('production'),
 
   RESEND_AUDIENCE_ID: z.string().min(1).optional(),
   RESEND_FROM: z.string().min(1).email().optional(),
@@ -32,12 +32,13 @@ const server: Parameters<typeof createEnv>[0]['server'] = {
   FLAGS_SECRET: z.string().min(1).optional(),
 
   // Auth
-  AUTH_GOOGLE_CLIENT_ID: z.string().min(1).optional(),
-  AUTH_GOOGLE_CLIENT_SECRET: z.string().min(1).optional(),
-  AUTH_FACEBOOK_CLIENT_ID: z.string().min(1).optional(),
-  AUTH_FACEBOOK_CLIENT_SECRET: z.string().min(1).optional(),
-  AUTH_APPLE_CLIENT_ID: z.string().min(1).optional(),
-  AUTH_APPLE_CLIENT_SECRET: z.string().min(1).optional(),
+  AUTH_SECRET: z.string().min(1).base64(),
+  AUTH_GOOGLE_ID: z.string().min(1),
+  AUTH_GOOGLE_SECRET: z.string().min(1),
+  AUTH_FACEBOOK_ID: z.string().min(1).optional(),
+  AUTH_FACEBOOK_SECRET: z.string().min(1).optional(),
+  AUTH_APPLE_ID: z.string().min(1).optional(),
+  AUTH_APPLE_SECRET: z.string().min(1).optional(),
 };
 
 const client: Parameters<typeof createEnv>[0]['client'] = {
@@ -57,7 +58,7 @@ export const env = createEnv({
   client,
   server,
   runtimeEnv: {
-    NEXTAUTH_SECRET: process.env.NEXTAUTH_SECRET,
+    NODE_ENV: process.env.NODE_ENV,
     RESEND_AUDIENCE_ID: process.env.RESEND_AUDIENCE_ID,
     RESEND_FROM: process.env.RESEND_FROM,
     DATABASE_URL: process.env.DATABASE_URL,
@@ -94,11 +95,12 @@ export const env = createEnv({
     process.env.NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL,
 
     // Auth
-    AUTH_GOOGLE_CLIENT_ID: process.env.AUTH_GOOGLE_CLIENT_ID,
-    AUTH_GOOGLE_CLIENT_SECRET: process.env.AUTH_GOOGLE_CLIENT_SECRET,
-    AUTH_FACEBOOK_CLIENT_ID: process.env.AUTH_FACEBOOK_CLIENT_ID,
-    AUTH_FACEBOOK_CLIENT_SECRET: process.env.AUTH_FACEBOOK_CLIENT_SECRET,
-    AUTH_APPLE_CLIENT_ID: process.env.AUTH_APPLE_CLIENT_ID,
-    AUTH_APPLE_CLIENT_SECRET: process.env.AUTH_APPLE_CLIENT_SECRET,
+    AUTH_SECRET: process.env.AUTH_SECRET,
+    AUTH_GOOGLE_ID: process.env.AUTH_GOOGLE_ID,
+    AUTH_GOOGLE_SECRET: process.env.AUTH_GOOGLE_SECRET,
+    AUTH_FACEBOOK_ID: process.env.AUTH_FACEBOOK_ID,
+    AUTH_FACEBOOK_SECRET: process.env.AUTH_FACEBOOK_SECRET,
+    AUTH_APPLE_ID: process.env.AUTH_APPLE_ID,
+    AUTH_APPLE_SECRET: process.env.AUTH_APPLE_SECRET,
   },
 });
