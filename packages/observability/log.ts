@@ -1,3 +1,11 @@
-import {log as logtail} from '@logtail/next';
+import {NextFetchEvent, NextRequest} from "next/server";
+import {MiddlewareFactory} from "@repo/next-config/middleware";
 
-export const log = process.env.NODE_ENV === 'production' ? logtail : console;
+export const log = console;
+
+export const withLogging: MiddlewareFactory = (next) => {
+  return async(request: NextRequest, _next: NextFetchEvent) => {
+    log.debug(`[${request.nextUrl.origin}][${request.nextUrl.pathname}] Middleware match`)
+    return next(request, _next)
+  }
+}

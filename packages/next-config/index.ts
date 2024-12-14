@@ -47,11 +47,6 @@ export const config: NextConfig = {
     ];
   },
 
-  i18n: {
-    locales: ['en', 'es'],
-    defaultLocale: 'en',
-  },
-
   webpack(config, {isServer}) {
     if (isServer) {
       config.plugins = [...config.plugins, new PrismaPlugin()];

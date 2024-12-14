@@ -8,6 +8,7 @@ import type {OAuthConfig} from 'next-auth/providers';
 import AppleProvider from 'next-auth/providers/apple';
 import FacebookProvider from 'next-auth/providers/facebook';
 import Google from 'next-auth/providers/google';
+import {locales} from "@repo/i18n/translations";
 
 export const providers: OAuthConfig<any>[] = [
   Google({
@@ -25,10 +26,11 @@ export const providers: OAuthConfig<any>[] = [
 ].sort((p1, p2) => p1.name.localeCompare(p2.name));
 
 export const {handlers, signIn, signOut, auth} = NextAuth({
-  debug: env.NODE_ENV == 'development',
+  debug: env.NODE_ENV === 'development',
   providers: providers,
   adapter: PrismaAdapter(database),
-  useSecureCookies: env.NODE_ENV === 'production',
+  useSecureCookies: env.NODE_ENV !== 'development',
+  basePath: `/${locales.defaultLocale.id}/api/auth`,
   pages: {
     signIn: '/sign-in',
   },
@@ -37,20 +39,20 @@ export const {handlers, signIn, signOut, auth} = NextAuth({
   },
   cookies: {
     pkceCodeVerifier: {
-      name: "auth.pkce.code_verifier",
+      name: "authjs.pkce.code_verifier",
       options: {
         httpOnly: true,
         sameSite: "strict",
-        secure: env.NODE_ENV === "production",
+        secure: env.NODE_ENV !== "development",
         path: "/",
       },
     },
     sessionToken: {
-      name: "auth.session-token",
+      name: "authjs.session-token",
       options: {
         httpOnly: true,
         sameSite: "strict",
-        secure: env.NODE_ENV === "production",
+        secure: env.NODE_ENV !== "development",
         path: "/",
         maxAge: 60 * 60 * 24,
       },

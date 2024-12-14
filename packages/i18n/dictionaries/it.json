@@ -1,0 +1,10 @@
+{
+  "signin": {
+    "with": "Accedi con"
+  },
+  "checkout": {
+    "action": {
+      "complete": "Completa il pagamento"
+    }
+  }
+}

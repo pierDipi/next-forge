@@ -26,6 +26,8 @@ model User {
 
   stripeCustomerId String? @unique
 
+  Transaction Transaction[]
+
   @@index([stripeCustomerId])
 }
 
@@ -84,4 +86,47 @@ model Authenticator {
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@id([userId, credentialID])
+}
+
+model Product {
+  id String @id @default(cuid())
+
+  stripeProductId String @unique
+
+  prices Price[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([stripeProductId])
+}
+
+model Price {
+  id            String @id @default(cuid())
+  stripePriceId String @unique
+  productId     String
+
+  product     Product       @relation(fields: [productId], references: [stripeProductId], onDelete: Cascade)
+  Transaction Transaction[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([stripePriceId])
+  @@index([productId])
+}
+
+model Transaction {
+  id       String @id @default(cuid())
+  priceId  String
+  userId   String
+  quantity Int
+
+  price Price @relation(fields: [priceId], references: [id], onDelete: Cascade)
+  user  User  @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+
+  @@index([userId])
+  @@index([priceId])
 }

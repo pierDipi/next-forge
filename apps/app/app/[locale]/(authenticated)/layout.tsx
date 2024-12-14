@@ -1,0 +1,39 @@
+import {auth} from '@repo/auth';
+import {SidebarProvider} from '@repo/design-system/components/ui/sidebar';
+import {showBetaFeature} from '@repo/feature-flags';
+import {redirect} from 'next/navigation';
+import type {ReactNode} from 'react';
+import {PostHogIdentifier} from "@/app/[locale]/(authenticated)/components/posthog-identifier";
+
+type AppLayoutProperties = {
+  readonly children: ReactNode;
+
+  params: {
+    locale: string
+  }
+};
+
+const AppLayout = async ({children, params}: AppLayoutProperties) => {
+  // const locale = await params?.locale ?? locales.defaultLocale
+  const session = await auth();
+  if (!session) {
+    return redirect(`/${params.locale}/sign-in`);
+  }
+
+  const betaFeature = await showBetaFeature();
+
+  return (
+    <SidebarProvider>
+      {betaFeature && (
+        <div
+          className="m-4 rounded-full bg-success p-1.5 text-center text-sm text-success-foreground">
+          Beta feature now available
+        </div>
+      )}
+      {children}
+      <PostHogIdentifier/>
+    </SidebarProvider>
+  );
+};
+
+export default AppLayout;

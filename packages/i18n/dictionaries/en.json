@@ -1,0 +1,10 @@
+{
+  "signin": {
+    "with": "Sign in with"
+  },
+  "checkout": {
+    "action": {
+      "complete": "Complete Your Purchase"
+    }
+  }
+}

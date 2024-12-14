@@ -17,18 +17,18 @@
     "@repo/env": "workspace:*",
     "@repo/observability": "workspace:*",
     "@repo/payments": "workspace:*",
-    "@sentry/nextjs": "^8.40.0",
+    "@sentry/nextjs": "^8.45.0",
     "@repo/next-config": "workspace:*",
-    "next": "15.0.3",
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "svix": "^1.41.0"
+    "next": "15.1.0",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
+    "svix": "^1.44.0"
   },
   "devDependencies": {
     "@repo/typescript-config": "workspace:*",
-    "@types/node": "22.9.3",
-    "@types/react": "18.3.12",
-    "@types/react-dom": "18.3.1",
+    "@types/node": "22.10.2",
+    "@types/react": "19.0.1",
+    "@types/react-dom": "19.0.2",
     "concurrently": "^9.1.0",
     "typescript": "^5.7.2"
   }

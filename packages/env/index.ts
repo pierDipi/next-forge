@@ -14,13 +14,6 @@ const server: Parameters<typeof createEnv>[0]['server'] = {
   BETTERSTACK_URL: z.string().min(1).url().optional(),
   ARCJET_KEY: z.string().min(1).startsWith('ajkey_').optional(),
   ANALYZE: z.string().optional(),
-  SVIX_TOKEN: z
-    .string()
-    .min(1)
-    .startsWith('sk_')
-    .or(z.string().min(1).startsWith('testsk_'))
-    .optional(),
-  LIVEBLOCKS_SECRET: z.string().min(1).startsWith('sk_').optional(),
 
   // Added by Sentry Integration, Vercel Marketplace
   SENTRY_ORG: z.string().min(1).optional().optional(),
@@ -50,6 +43,8 @@ const client: Parameters<typeof createEnv>[0]['client'] = {
   NEXT_PUBLIC_POSTHOG_KEY: z.string().min(1).startsWith('phc_'),
   NEXT_PUBLIC_POSTHOG_HOST: z.string().min(1).url(),
 
+  NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY: z.string().min(1).startsWith("pk_").optional(),
+
   // Added by Vercel
   NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL: z.string().min(1).url().optional(),
 };
@@ -64,6 +59,7 @@ export const env = createEnv({
     DATABASE_URL: process.env.DATABASE_URL,
     RESEND_TOKEN: process.env.RESEND_TOKEN,
     STRIPE_SECRET_KEY: process.env.STRIPE_SECRET_KEY,
+    NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY: process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY,
     STRIPE_WEBHOOK_SECRET: process.env.STRIPE_WEBHOOK_SECRET,
     BETTERSTACK_API_KEY: process.env.BETTERSTACK_API_KEY,
     BETTERSTACK_URL: process.env.BETTERSTACK_URL,
@@ -74,7 +70,6 @@ export const env = createEnv({
     VERCEL: process.env.VERCEL,
     NEXT_RUNTIME: process.env.NEXT_RUNTIME,
     FLAGS_SECRET: process.env.FLAGS_SECRET,
-    SVIX_TOKEN: process.env.SVIX_TOKEN,
     LIVEBLOCKS_SECRET: process.env.LIVEBLOCKS_SECRET,
     NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY:
     process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY,
