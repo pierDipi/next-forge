@@ -19,9 +19,7 @@ export const Checkout = ({title, path, locale}: CheckoutProps) => {
         fetchClientSecret: createCheckoutSession(path),
     };
 
-    const stripePromise = loadStripe(env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY, {
-        locale: 'it'
-    });
+    const stripePromise = loadStripe(env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY, {locale: locale});
 
     return (
         <div className="flex items-center justify-center min-h-screen bg-background">
@@ -29,7 +27,7 @@ export const Checkout = ({title, path, locale}: CheckoutProps) => {
                 <h1 className="mb-4 text-xl font-semibold text-center text-primary">
                     {title}
                 </h1>
-                <div id="checkout">
+                <div id="checkout" className={"bg-gray-100 "}>
                     <EmbeddedCheckoutProvider stripe={stripePromise} options={options}>
                         <EmbeddedCheckout/>
                     </EmbeddedCheckoutProvider>

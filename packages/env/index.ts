@@ -10,8 +10,6 @@ const server: Parameters<typeof createEnv>[0]['server'] = {
   DATABASE_URL: z.string().min(1).url(),
   STRIPE_SECRET_KEY: z.string().min(1).startsWith('sk_').optional(),
   STRIPE_WEBHOOK_SECRET: z.string().min(1).startsWith('whsec_').optional(),
-  BETTERSTACK_API_KEY: z.string().min(1).optional(),
-  BETTERSTACK_URL: z.string().min(1).url().optional(),
   ARCJET_KEY: z.string().min(1).startsWith('ajkey_').optional(),
   ANALYZE: z.string().optional(),
 
@@ -61,8 +59,6 @@ export const env = createEnv({
     STRIPE_SECRET_KEY: process.env.STRIPE_SECRET_KEY,
     NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY: process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY,
     STRIPE_WEBHOOK_SECRET: process.env.STRIPE_WEBHOOK_SECRET,
-    BETTERSTACK_API_KEY: process.env.BETTERSTACK_API_KEY,
-    BETTERSTACK_URL: process.env.BETTERSTACK_URL,
     ARCJET_KEY: process.env.ARCJET_KEY,
     ANALYZE: process.env.ANALYZE,
     SENTRY_ORG: process.env.SENTRY_ORG,
@@ -70,7 +66,6 @@ export const env = createEnv({
     VERCEL: process.env.VERCEL,
     NEXT_RUNTIME: process.env.NEXT_RUNTIME,
     FLAGS_SECRET: process.env.FLAGS_SECRET,
-    LIVEBLOCKS_SECRET: process.env.LIVEBLOCKS_SECRET,
     NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY:
     process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY,
     NEXT_PUBLIC_CLERK_SIGN_IN_URL: process.env.NEXT_PUBLIC_CLERK_SIGN_IN_URL,

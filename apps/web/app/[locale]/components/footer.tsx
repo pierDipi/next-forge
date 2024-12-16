@@ -1,5 +1,4 @@
 import {env} from '@repo/env';
-import {Status} from '@repo/observability/status';
 import Link from 'next/link';
 import {LocaleCode} from "@repo/i18n/middleware";
 
@@ -64,7 +63,6 @@ export const Footer = ({locale}: FooterProps) => {
                   This is the start of something new.
                 </p>
               </div>
-              <Status/>
             </div>
             <div className="grid items-start gap-10 lg:grid-cols-3">
               {navigationItems.map((item) => (

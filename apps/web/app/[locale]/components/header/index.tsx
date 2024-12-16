@@ -39,18 +39,6 @@ export const Header = ({locale}: HeaderProps) => {
           title: 'Pricing',
           href: `/${locale}/pricing`,
         },
-        {
-          title: 'Pricing',
-          href: `/${locale}/pricing`,
-        },
-        {
-          title: 'Pricing',
-          href: `/${locale}/pricing`,
-        },
-        {
-          title: 'Pricing',
-          href: `/${locale}/pricing`,
-        },
       ],
     },
     {
@@ -101,7 +89,7 @@ export const Header = ({locale}: HeaderProps) => {
                               <Link href={`/${locale}/contact`}>Book a call today</Link>
                             </Button>
                           </div>
-                          <div className="flex h-full flex-col justify-end text-sm">
+                          <div className="flex h-full flex-col justify-start text-sm">
                             {item.items?.map((subItem, idx) => (
                               <NavigationMenuLink
                                 href={subItem.href}
