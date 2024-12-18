@@ -2,9 +2,10 @@ import {providers, signIn} from '@repo/auth';
 import {Button} from '@repo/design-system/components/ui/button';
 import Image from 'next/image';
 import {getDictionary} from "@repo/i18n/dictionaries";
+import {LocaleCode} from "@repo/i18n/middleware";
 
 interface SignInProps {
-    locale: string
+    locale: LocaleCode
 }
 
 export const SignIn = async ({locale}: SignInProps) => {

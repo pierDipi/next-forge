@@ -8,16 +8,17 @@ import {PostHogIdentifier} from "@/app/[locale]/(authenticated)/components/posth
 type AppLayoutProperties = {
   readonly children: ReactNode;
 
-  params: {
+  params: Promise<{
     locale: string
-  }
+  }>
 };
 
 const AppLayout = async ({children, params}: AppLayoutProperties) => {
   // const locale = await params?.locale ?? locales.defaultLocale
   const session = await auth();
   if (!session) {
-    return redirect(`/${params.locale}/sign-in`);
+    const {locale} = await params
+    return redirect(`/${locale}/sign-in`);
   }
 
   const betaFeature = await showBetaFeature();

@@ -1,4 +1,4 @@
-import NextAuth from 'next-auth';
+import NextAuth, {type NextAuthResult} from 'next-auth';
 
 import {PrismaAdapter} from '@auth/prisma-adapter';
 
@@ -11,52 +11,57 @@ import Google from 'next-auth/providers/google';
 import {locales} from "@repo/i18n/translations";
 
 export const providers: OAuthConfig<any>[] = [
-  Google({
-    clientId: env.AUTH_GOOGLE_ID,
-    clientSecret: env.AUTH_GOOGLE_SECRET,
-  }),
-  FacebookProvider({
-    clientId: env.AUTH_FACEBOOK_ID,
-    clientSecret: env.AUTH_FACEBOOK_SECRET,
-  }),
-  AppleProvider({
-    clientId: env.AUTH_APPLE_ID,
-    clientSecret: env.AUTH_APPLE_SECRET,
-  }),
+    Google({
+        clientId: env.AUTH_GOOGLE_ID,
+        clientSecret: env.AUTH_GOOGLE_SECRET,
+    }),
+    FacebookProvider({
+        clientId: env.AUTH_FACEBOOK_ID,
+        clientSecret: env.AUTH_FACEBOOK_SECRET,
+    }),
+    AppleProvider({
+        clientId: env.AUTH_APPLE_ID,
+        clientSecret: env.AUTH_APPLE_SECRET,
+    }),
 ].sort((p1, p2) => p1.name.localeCompare(p2.name));
 
-export const {handlers, signIn, signOut, auth} = NextAuth({
-  debug: env.NODE_ENV === 'development',
-  providers: providers,
-  adapter: PrismaAdapter(database),
-  useSecureCookies: env.NODE_ENV !== 'development',
-  basePath: `/${locales.defaultLocale.id}/api/auth`,
-  pages: {
-    signIn: '/sign-in',
-  },
-  session: {
-    strategy: 'jwt',
-  },
-  cookies: {
-    pkceCodeVerifier: {
-      name: "authjs.pkce.code_verifier",
-      options: {
-        httpOnly: true,
-        sameSite: "strict",
-        secure: env.NODE_ENV !== "development",
-        path: "/",
-      },
+const result = NextAuth({
+    debug: env.NODE_ENV === 'development',
+    providers: providers,
+    adapter: PrismaAdapter(database),
+    useSecureCookies: env.NODE_ENV !== 'development',
+    basePath: `/${locales.defaultLocale.id}/api/auth`,
+    pages: {
+        signIn: '/sign-in',
     },
-    sessionToken: {
-      name: "authjs.session-token",
-      options: {
-        httpOnly: true,
-        sameSite: "strict",
-        secure: env.NODE_ENV !== "development",
-        path: "/",
-        maxAge: 60 * 60 * 24,
-      },
+    session: {
+        strategy: 'jwt',
     },
-  }
+    cookies: {
+        pkceCodeVerifier: {
+            name: "authjs.pkce.code_verifier",
+            options: {
+                httpOnly: true,
+                sameSite: "strict",
+                secure: env.NODE_ENV !== "development",
+                path: "/",
+            },
+        },
+        sessionToken: {
+            name: "authjs.session-token",
+            options: {
+                httpOnly: true,
+                sameSite: "strict",
+                secure: env.NODE_ENV !== "development",
+                path: "/",
+                maxAge: 60 * 60 * 24,
+            },
+        },
+    }
 });
+
+export const handlers: NextAuthResult['handlers'] = result.handlers;
+export const auth: NextAuthResult['auth'] = result.auth;
+export const signIn: NextAuthResult['signIn'] = result.signIn;
+export const signOut: NextAuthResult['signOut'] = result.signOut;
 
