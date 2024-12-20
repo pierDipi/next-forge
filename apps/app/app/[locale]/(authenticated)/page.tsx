@@ -1,4 +1,4 @@
-import {auth} from '@repo/auth';
+import {auth, userTransactions} from '@repo/auth';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -13,8 +13,7 @@ import type {Metadata} from 'next';
 import {notFound} from 'next/navigation';
 import {Checkout} from "@repo/payments/client/checkout";
 import {locales} from "@repo/i18n/translations";
-import {getDictionary} from "@repo/i18n/dictionaries";
-import {log} from "@repo/observability/log";
+import {getDictionary} from "@repo/i18n/translations";
 import {LocaleCode} from "@repo/i18n/middleware";
 
 const title = 'Acme Inc';
@@ -44,6 +43,8 @@ const App = async (props: AppProps) => {
   const locale = (await props.params)?.locale ?? locales.defaultLocale.id
   const d = await getDictionary(locale)
 
+  const transactions = await userTransactions()
+
   return (
     <>
       <header className="flex h-16 shrink-0 items-center justify-between gap-2">
@@ -66,10 +67,12 @@ const App = async (props: AppProps) => {
         </div>
       </header>
       <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
-        <div className="grid auto-rows-min gap-4 md:grid-cols-3">Pages</div>
-        <div className="min-h-[100vh] flex-1 rounded-xl bg-muted/50 md:min-h-min"/>
+        <div className="grid auto-rows-min gap-4 md:grid-cols-3">Transactions</div>
+        <div className="min-h-[100vh] flex-1 rounded-xl bg-muted/50 md:min-h-min">
+          <pre>{JSON.stringify(transactions, null, "  ")}</pre>
+        </div>
       </div>
-      <Checkout locale={locale} title={d.checkout.action.complete} path={`/${locale}/api/stripe/checkout/sessions`}/>
+      <Checkout locale={locale} title={d.app.checkout.action.promptComplete} path={`/${locale}/api/stripe/checkout/sessions`}/>
     </>
   );
 };

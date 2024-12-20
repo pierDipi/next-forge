@@ -1,7 +1,7 @@
 import {providers, signIn} from '@repo/auth';
 import {Button} from '@repo/design-system/components/ui/button';
 import Image from 'next/image';
-import {getDictionary} from "@repo/i18n/dictionaries";
+import {getDictionary} from "@repo/i18n/translations";
 import {LocaleCode} from "@repo/i18n/middleware";
 
 interface SignInProps {
@@ -32,12 +32,12 @@ export const SignIn = async ({locale}: SignInProps) => {
                         <div className="relative w-6 h-6 shrink-0">
                             <Image
                                 src={'/signin/' + provider.id + '.svg'}
-                                alt={ d.signin.with + ' ' + provider.name}
+                                alt={ d.app.signin.with  + ' ' + provider.name}
                                 fill
                                 style={{objectFit: 'contain'}}
                             />
                         </div>
-                        {d.signin.with + ' ' + provider.name}
+                        {d.app.signin.with + ' ' + provider.name}
                     </Button>
                 </form>
             ))}

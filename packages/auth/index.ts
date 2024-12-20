@@ -2,6 +2,8 @@ import NextAuth, {type NextAuthResult} from 'next-auth';
 
 import {PrismaAdapter} from '@auth/prisma-adapter';
 
+import {Prisma} from '@prisma/client';
+
 import {database} from '@repo/database';
 import {env} from '@repo/env';
 import type {OAuthConfig} from 'next-auth/providers';
@@ -9,6 +11,7 @@ import AppleProvider from 'next-auth/providers/apple';
 import FacebookProvider from 'next-auth/providers/facebook';
 import Google from 'next-auth/providers/google';
 import {locales} from "@repo/i18n/translations";
+import {log} from "@repo/observability/log";
 
 export const providers: OAuthConfig<any>[] = [
     Google({
@@ -64,4 +67,35 @@ export const handlers: NextAuthResult['handlers'] = result.handlers;
 export const auth: NextAuthResult['auth'] = result.auth;
 export const signIn: NextAuthResult['signIn'] = result.signIn;
 export const signOut: NextAuthResult['signOut'] = result.signOut;
+
+export interface UserTransactions {
+    transactionSelect?: Prisma.TransactionSelect<any> | null
+}
+
+export const userTransactions = async (args?: UserTransactions) => {
+    const user = await auth()
+    if (!user || !user.user || !user.user.email) {
+        return null
+    }
+
+    log.debug(`Getting user transactions for user ${user.user}`)
+
+    return database.user.findUnique({
+        where: {
+            email: user.user.email
+        },
+        include: {
+            transactions: {
+                select: args?.transactionSelect,
+                include: {
+                    price: {
+                        include: {
+                            product: true
+                        }
+                    }
+                },
+            }
+        }
+    })
+}
 

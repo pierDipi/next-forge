@@ -26,7 +26,7 @@ model User {
 
   stripeCustomerId String? @unique
 
-  Transaction Transaction[]
+  transactions Transaction[]
 
   @@index([stripeCustomerId])
 }
@@ -106,8 +106,8 @@ model Price {
   stripePriceId String @unique
   productId     String
 
-  product     Product       @relation(fields: [productId], references: [stripeProductId], onDelete: Cascade)
-  Transaction Transaction[]
+  product      Product       @relation(fields: [productId], references: [stripeProductId], onDelete: Cascade)
+  transactions Transaction[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt

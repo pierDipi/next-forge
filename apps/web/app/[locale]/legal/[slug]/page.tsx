@@ -29,6 +29,7 @@ export const generateMetadata = async ({
     return createMetadata({
         title: page.title,
         description: page.description,
+        locale: locale,
     });
 };
 

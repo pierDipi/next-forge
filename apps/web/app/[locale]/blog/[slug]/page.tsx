@@ -22,7 +22,7 @@ type BlogPostProperties = {
 export const generateMetadata = async ({
                                            params,
                                        }: BlogPostProperties): Promise<Metadata> => {
-    const {slug} = await params;
+    const {slug, locale} = await params;
     const page = allPosts.find(({_meta}) => _meta.path === slug);
 
     if (!page) {
@@ -33,6 +33,7 @@ export const generateMetadata = async ({
         title: page.title,
         description: page.description,
         image: page.image,
+        locale: locale,
     });
 };
 

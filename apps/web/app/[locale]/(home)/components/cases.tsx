@@ -8,7 +8,11 @@ import {
 } from '@repo/design-system/components/ui/carousel';
 import {useEffect, useState} from 'react';
 
-export const Cases = () => {
+interface CasesProps {
+  header: string
+}
+
+export const Cases = ({header}: CasesProps) => {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
 
@@ -29,11 +33,11 @@ export const Cases = () => {
   }, [api, current]);
 
   return (
-    <div className="w-full py-20 lg:py-40">
+    <div className="w-full py-20 lg:py-30">
       <div className="container mx-auto">
         <div className="flex flex-col gap-10">
           <h2 className="text-left font-regular text-xl tracking-tighter md:text-5xl lg:max-w-xl">
-            Trusted by thousands of businesses worldwide
+            {header}
           </h2>
           <Carousel setApi={setApi} className="w-full">
             <CarouselContent>
