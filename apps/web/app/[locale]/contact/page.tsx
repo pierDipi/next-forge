@@ -1,5 +1,5 @@
 import {createMetadata} from '@repo/seo/metadata';
-import {getDictionary, locales} from "@repo/i18n/translations";
+import {getDictionary} from "@repo/i18n/translations";
 import {LocaleCode} from "@repo/i18n/middleware";
 import {Check} from "lucide-react";
 import {ContactForm} from "@/app/[locale]/contact/components/contact-form";
@@ -20,8 +20,10 @@ export async function generateMetadata({params}: ContactProps) {
     })
 }
 
-export async function generateStaticParams() {
-    return locales.locales.map((l) => ({locale: l.id}))
+interface ContactProps {
+    params: Promise<{
+        locale: LocaleCode;
+    }>
 }
 
 const Contact = async ({params}: ContactProps) => {

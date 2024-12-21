@@ -11,7 +11,9 @@ import {CalendarIcon, MoveRight} from 'lucide-react';
 import React, {useState} from 'react';
 
 interface ContactFormProps {
+    text: {
 
+    }
 }
 
 export const ContactForm = (p: ContactFormProps) => {

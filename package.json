@@ -15,16 +15,7 @@
     "analyze": "turbo analyze",
     "bump-deps": "npx npm-check-updates --deep -u -x react-day-picker && pnpm install",
     "migrate": "packages/database && npx prisma format && npx prisma generate && npx prisma db push",
-    "migrate-dev": "export DATABASE_URL=file:./dev/db.sqlite && cd packages/database && npx prisma format && npx prisma generate && npx prisma db push",
-    "clean": "pnpm -r exec rm -rf node_modules .next .turbo .content-collections .react-email"
-  },
-  "pnpm": {
-    "overrides": {
-      "react": "19.0.0",
-      "@types/react": "19.0.2",
-      "@types/react-dom": "19.0.2",
-      "next": "15.1.2"
-    }
+    "migrate-dev": "export DATABASE_URL=file:./dev/db.sqlite && cd packages/database && npx prisma format && npx prisma generate && npx prisma db push"
   },
   "devDependencies": {
     "@auto-it/all-contributors": "^11.3.0",
@@ -40,5 +31,5 @@
   "engines": {
     "node": ">=18"
   },
-  "packageManager": "pnpm@9.15.1"
+  "packageManager": "pnpm@9.15.0"
 }
