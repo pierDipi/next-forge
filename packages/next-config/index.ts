@@ -53,6 +53,13 @@ const cacheExtensions = [
 ]
 
 export const config: NextConfig = {
+    experimental: {
+        turbo: {
+            // ...
+
+        },
+    },
+
     images: {
         formats: ['image/avif', 'image/webp'],
         remotePatterns: [],
@@ -91,7 +98,7 @@ export const config: NextConfig = {
                     ...secureHeaders,
                     {
                         key: 'Cache-Control',
-                        value: 'public, max-age=31536000',
+                        value: env.NODE_ENV === 'development' ? 'max-age=0' : 'public, max-age=31536000',
                     }
                 ]
             },

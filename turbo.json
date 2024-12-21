@@ -6,6 +6,7 @@
   "tasks": {
     "build": {
       "dependsOn": [
+        "clean",
         "^build"
       ],
       "outputs": [
@@ -35,6 +36,9 @@
       "persistent": true
     },
     "clean": {
+      "dependsOn": [
+        "^clean"
+      ],
       "cache": false
     },
     "//#clean": {

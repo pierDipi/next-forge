@@ -8,13 +8,13 @@
     "@repo/observability": "workspace:*",
     "@formatjs/intl-localematcher": "^0.5.9",
     "negotiator": "^1.0.0",
-    "next": "15.1.0",
+    "next": "15.1.2",
     "react": "^19.0.0"
   },
   "devDependencies": {
     "@repo/typescript-config": "workspace:*",
     "@repo/next-config": "workspace:*",
     "typescript": "^5.7.2",
-    "@types/react": "19.0.1"
+    "@types/react": "19.0.2"
   }
 }

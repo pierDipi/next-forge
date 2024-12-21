@@ -3,7 +3,6 @@ import {SidebarProvider} from '@repo/design-system/components/ui/sidebar';
 import {showBetaFeature} from '@repo/feature-flags';
 import {redirect} from 'next/navigation';
 import type {ReactNode} from 'react';
-import {PostHogIdentifier} from "@/app/[locale]/(authenticated)/components/posthog-identifier";
 
 type AppLayoutProperties = {
   readonly children: ReactNode;
@@ -32,7 +31,6 @@ const AppLayout = async ({children, params}: AppLayoutProperties) => {
         </div>
       )}
       {children}
-      <PostHogIdentifier/>
     </SidebarProvider>
   );
 };

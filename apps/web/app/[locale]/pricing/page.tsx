@@ -1,7 +1,7 @@
 import {Button} from '@repo/design-system/components/ui/button';
 import {Check, MoveRight} from 'lucide-react';
 import {LocaleCode} from "@repo/i18n/middleware";
-import {getDictionary} from "@repo/i18n/translations";
+import {getDictionary, locales} from "@repo/i18n/translations";
 import {Badge} from "@repo/design-system/components/ui/badge";
 import {
     Card,
@@ -27,6 +27,10 @@ export async function generateMetadata({params}: PricingProps) {
         description: d.web.pricing.metadata.description,
         locale: locale
     })
+}
+
+export async function generateStaticParams() {
+    return locales.locales.map((l) => ({locale: l.id}))
 }
 
 const Pricing = async ({params}: PricingProps) => {
