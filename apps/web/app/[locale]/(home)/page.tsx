@@ -7,6 +7,7 @@ import {Stats} from './components/stats';
 import {Testimonials} from './components/testimonials';
 import {LocaleCode} from "@repo/i18n/middleware";
 import {getDictionary, locales} from "@repo/i18n/translations";
+import {createMetadata} from "@repo/seo/metadata";
 
 export async function generateStaticParams() {
     return locales.locales.map((l) => ({locale: l.id}))
@@ -21,7 +22,12 @@ interface HomeProps {
 export async function generateMetadata({params}: HomeProps) {
     const {locale} = await params
     const d = await getDictionary(locale)
-    return d.web.home.metadata
+
+    return createMetadata({
+        title: d.web.home.metadata.title,
+        description: d.web.home.metadata.description,
+        locale: locale
+    })
 }
 
 const Home = async ({params}: HomeProps) => {

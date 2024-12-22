@@ -1,19 +1,31 @@
 import {SignIn} from '../components/sign-in';
 import {createMetadata} from '@repo/seo/metadata';
-import type {Metadata} from 'next';
 import {auth} from "@repo/auth";
 import {redirect} from "next/navigation";
 import {LocaleCode} from "@repo/i18n/middleware";
+import {getDictionary, locales} from "@repo/i18n/translations";
 
 const title = 'Welcome back';
 const description = 'Enter your details to sign in.';
-
-export const metadata: Metadata = createMetadata({title, description});
 
 interface SignInPageProps {
     params: Promise<{
         locale: LocaleCode
     }>;
+}
+
+export async function generateMetadata({params}: SignInPageProps) {
+    const {locale} = await params
+    const d = await getDictionary(locale)
+    return createMetadata({
+        title: title,
+        description: description,
+        locale: locale
+    })
+}
+
+export async function generateStaticParams() {
+    return locales.locales.map((l) => ({locale: l.id}))
 }
 
 const SignInPage = async ({params}: SignInPageProps) => {

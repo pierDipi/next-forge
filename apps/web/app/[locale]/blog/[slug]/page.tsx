@@ -5,7 +5,6 @@ import {env} from '@repo/env';
 import {type BlogPosting, JsonLd, type WithContext} from '@repo/seo/json-ld';
 import {createMetadata} from '@repo/seo/metadata';
 import {allPosts} from 'content-collections';
-import type {Metadata} from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import {redirect} from 'next/navigation';
@@ -19,14 +18,13 @@ type BlogPostProperties = {
     }>;
 };
 
-export const generateMetadata = async ({
+export async function generateMetadata({
                                            params,
-                                       }: BlogPostProperties): Promise<Metadata> => {
+                                       }: BlogPostProperties) {
     const {slug, locale} = await params;
-    const page = allPosts.find(({_meta}) => _meta.path === slug);
-
+    const page = findBlogPost(slug, locale)
     if (!page) {
-        return {};
+        return {}
     }
 
     return createMetadata({
@@ -44,9 +42,7 @@ export const generateStaticParams = (): { slug: string }[] =>
 
 const BlogPost = async ({params}: BlogPostProperties) => {
     const {slug, locale} = await params;
-
-    const page = allPosts
-        .find(({_meta, slug: pSlug}) => pSlug === slug && _meta.path.endsWith(locale));
+    const page = findBlogPost(slug, locale);
     if (!page) {
         redirect(`/${locale}/blog`)
     }
@@ -117,3 +113,8 @@ const BlogPost = async ({params}: BlogPostProperties) => {
 };
 
 export default BlogPost;
+
+function findBlogPost(slug: string, locale: LocaleCode) {
+    return allPosts
+        .find(({_meta, slug: pSlug}) => pSlug === slug && _meta.path.endsWith(locale));
+}

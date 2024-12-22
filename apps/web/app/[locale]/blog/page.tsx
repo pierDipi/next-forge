@@ -3,20 +3,33 @@ import type {Blog, WithContext} from '@repo/seo/json-ld';
 import {JsonLd} from '@repo/seo/json-ld';
 import {createMetadata} from '@repo/seo/metadata';
 import {allPosts} from 'content-collections';
-import type {Metadata} from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import {LocaleCode} from "@repo/i18n/middleware";
+import {getDictionary, locales} from "@repo/i18n/translations";
 
 const title = 'Blog';
 const description = 'Thoughts, ideas, and opinions.';
-
-export const metadata: Metadata = createMetadata({title, description});
 
 interface BlogIndexProps {
     params: Promise<{
         locale: LocaleCode
     }>;
+}
+
+export async function generateMetadata({params}: BlogIndexProps) {
+    const {locale} = await params
+    const d = await getDictionary(locale)
+
+    return createMetadata({
+        title: title,
+        description: description,
+        locale: locale
+    })
+}
+
+export async function generateStaticParams() {
+    return locales.locales.map((l) => ({locale: l.id}))
 }
 
 const BlogIndex = async ({params}: BlogIndexProps) => {
