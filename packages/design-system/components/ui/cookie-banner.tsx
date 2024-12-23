@@ -65,7 +65,7 @@ const CookieBanner = ({
 
   return (
     <Dialog open={isBannerVisible}>
-      <DialogContent className="bg-white p-6 shadow-lg rounded-lg max-w-lg mx-auto">
+      <DialogContent aria-describedby={title} className="bg-white p-6 shadow-lg rounded-lg max-w-lg mx-auto">
         <DialogHeader>
           <DialogTitle>{title}</DialogTitle>
           <DialogDescription>
