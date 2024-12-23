@@ -1,6 +1,6 @@
 'use client';
 
-import {ModeToggle} from '@repo/design-system/components/mode-toggle';
+import {ModeToggle} from '@repo/design-system/components/ui/mode-toggle';
 import {Button} from '@repo/design-system/components/ui/button';
 import {
     NavigationMenu,

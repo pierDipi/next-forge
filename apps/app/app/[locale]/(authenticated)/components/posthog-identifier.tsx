@@ -1,12 +1,12 @@
 'use client';
 
 import {analytics} from '@repo/analytics/posthog/client';
-import {useUser} from '@repo/auth/client';
 import {usePathname, useSearchParams} from 'next/navigation';
 import {useEffect, useRef} from 'react';
+import {useSession} from "@repo/auth/client";
 
 export const PostHogIdentifier = () => {
-  const user = useUser();
+  const {data: session} = useSession();
   const identified = useRef(false);
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -25,16 +25,14 @@ export const PostHogIdentifier = () => {
   }, [pathname, searchParams]);
 
   useEffect(() => {
-    if (!user || identified.current) {
+    if (!session || !session.user || identified.current) {
       return;
     }
 
-    analytics.identify(user.id, {
-      email: user.email,
-    });
+    analytics.identify(session.user.id);
 
     identified.current = true;
-  }, [user]);
+  }, [session]);
 
   return null;
 };

@@ -1,4 +1,4 @@
-import {ModeToggle} from '@repo/design-system/components/mode-toggle';
+import {ModeToggle} from '@repo/design-system/components/ui/mode-toggle';
 import {env} from '@repo/env';
 import {CommandIcon} from 'lucide-react';
 import Link from 'next/link';
