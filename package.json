@@ -9,13 +9,14 @@
   ],
   "scripts": {
     "build": "turbo build",
-    "dev": "turbo dev",
+    "dev": "pnpm install && pnpm migrate-dev && turbo dev",
     "lint": "turbo lint",
     "test": "turbo test",
     "analyze": "turbo analyze",
     "bump-deps": "npx npm-check-updates --deep -u -x react-day-picker && pnpm install",
     "migrate": "packages/database && npx prisma format && npx prisma generate && npx prisma db push",
-    "migrate-dev": "export DATABASE_URL=file:./dev/db.sqlite && cd packages/database && npx prisma format && npx prisma generate && npx prisma db push"
+    "migrate-dev": "export DATABASE_URL=file:./dev/db.sqlite && cd packages/database && npx prisma format && npx prisma generate && npx prisma db push",
+    "clean": "pnpm -r exec rm -rf node_modules .next .turbo .content-collections .react-email next-env.d.ts && rm -rf node_modules .turbo .next"
   },
   "devDependencies": {
     "@auto-it/all-contributors": "^11.3.0",

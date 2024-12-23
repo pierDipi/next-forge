@@ -53,12 +53,12 @@ const App = async (props: AppProps) => {
           <Separator orientation="vertical" className="mr-2 h-4"/>
           <Breadcrumb>
             <BreadcrumbList>
-              <BreadcrumbItem className="hidden md:block">
-                <BreadcrumbLink href="#">
+              <BreadcrumbItem className="block">
+                <BreadcrumbLink href="#link">
                   Building Your Application
                 </BreadcrumbLink>
               </BreadcrumbItem>
-              <BreadcrumbSeparator className="hidden md:block"/>
+              <BreadcrumbSeparator className="block"/>
               <BreadcrumbItem>
                 <BreadcrumbPage>Data Fetching</BreadcrumbPage>
               </BreadcrumbItem>

@@ -4,37 +4,40 @@ import {showBetaFeature} from '@repo/feature-flags';
 import {redirect} from 'next/navigation';
 import type {ReactNode} from 'react';
 import {PostHogIdentifier} from "@/app/[locale]/(authenticated)/components/posthog-identifier";
+import {GlobalSidebar} from "@/app/[locale]/(authenticated)/components/sidebar";
+import {LocaleCode} from "@repo/i18n/middleware";
 
 type AppLayoutProperties = {
-  readonly children: ReactNode;
+    readonly children: ReactNode;
 
-  params: Promise<{
-    locale: string
-  }>
+    params: Promise<{
+        locale: LocaleCode
+    }>
 };
 
 const AppLayout = async ({children, params}: AppLayoutProperties) => {
-  // const locale = await params?.locale ?? locales.defaultLocale
-  const session = await auth();
-  if (!session) {
     const {locale} = await params
-    return redirect(`/${locale}/sign-in`);
-  }
+    const session = await auth();
+    if (!session) {
+        return redirect(`/${locale}/sign-in`);
+    }
 
-  const betaFeature = await showBetaFeature();
+    const betaFeature = await showBetaFeature();
 
-  return (
-    <SidebarProvider>
-      {betaFeature && (
-        <div
-          className="m-4 rounded-full bg-success p-1.5 text-center text-sm text-success-foreground">
-          Beta feature now available
-        </div>
-      )}
-      {children}
-      <PostHogIdentifier/>
-    </SidebarProvider>
-  );
+    return (
+        <SidebarProvider>
+            <GlobalSidebar locale={locale}>
+                {betaFeature && (
+                    <div
+                        className="m-4 rounded-full bg-success p-1.5 text-center text-sm text-success-foreground">
+                        Beta feature now available
+                    </div>
+                )}
+                {children}
+            </GlobalSidebar>
+            <PostHogIdentifier/>
+        </SidebarProvider>
+    );
 };
 
 export default AppLayout;

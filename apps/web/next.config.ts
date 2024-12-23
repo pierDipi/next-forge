@@ -5,16 +5,14 @@ import type {NextConfig} from 'next';
 
 let nextConfig: NextConfig = {...config};
 
-if (process.env.NODE_ENV === 'production') {
-    const redirects: NextConfig['redirects'] = async () => [
+if (env.NODE_ENV === 'production') {
+    nextConfig.redirects = async () => [
         {
             source: '/legal',
             destination: '/legal/privacy',
             statusCode: 301,
         },
     ];
-
-    nextConfig.redirects = redirects;
 }
 
 if (env.ANALYZE === 'true') {
