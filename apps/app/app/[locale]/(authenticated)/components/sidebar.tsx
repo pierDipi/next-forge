@@ -53,8 +53,8 @@ export const AppSidebar = ({user, locale}: AppSidebarProps) => {
                     isActive: true,
                     items: [
                         {
-                            title: "History",
-                            url: "#",
+                            title: "Uploads",
+                            url: `/${locale}/playground/uploads`,
                         },
                         {
                             title: "Starred",

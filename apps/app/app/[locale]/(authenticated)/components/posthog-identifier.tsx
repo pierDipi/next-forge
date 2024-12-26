@@ -12,7 +12,7 @@ export const PostHogIdentifier = () => {
   const searchParams = useSearchParams();
 
   useEffect(() => {
-    // Track pageviews
+    // Track page views
     if (pathname && analytics) {
       let url = window.origin + pathname;
       if (searchParams.toString()) {

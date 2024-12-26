@@ -4,8 +4,8 @@ import {Button, ButtonProps} from "@repo/design-system/components/ui/button";
 import {ReactNode, useRef} from "react";
 
 interface UploadButtonProps {
-    // readonly onChange: (files: FileList | null) => Promise<any> | void
     readonly children: ReactNode
+    readonly upload: (files: FileList | null) => Promise<any> | void
     readonly buttonProps?: ButtonProps
 
 }
@@ -14,12 +14,12 @@ function onChange(files: FileList | null) {
     console.log(files)
 }
 
-export const UploadButton = ({children, buttonProps}: UploadButtonProps) => {
+export const UploadButton = ({children, buttonProps, upload}: UploadButtonProps) => {
 
     const inputRef = useRef<HTMLInputElement | null>(null);
 
     return (
-        <div>
+        <>
             <Button
                 {...buttonProps}
                 type={"submit"}
@@ -30,9 +30,9 @@ export const UploadButton = ({children, buttonProps}: UploadButtonProps) => {
                    type={"file"}
                    ref={inputRef}
                    multiple={true}
-                   onChange={(event) => onChange(event.currentTarget.files)}
+                   onChange={(event) => upload(event.currentTarget.files)}
             />
-        </div>
+        </>
     )
 }
 

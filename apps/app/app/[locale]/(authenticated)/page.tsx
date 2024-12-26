@@ -14,8 +14,7 @@ import {notFound} from 'next/navigation';
 import {Checkout} from "@repo/payments/client/checkout";
 import {getDictionary, locales} from "@repo/i18n/translations";
 import {LocaleCode} from "@repo/i18n/middleware";
-import {UploadButton} from "@repo/design-system/components/ui/upload-button";
-import {CloudUpload} from "lucide-react";
+import UploadProgressToast from "@/app/[locale]/(authenticated)/components/upload";
 
 const title = 'Acme Inc';
 const description = 'My application.';
@@ -35,13 +34,13 @@ interface AppProps {
     }>
 }
 
-const App = async (props: AppProps) => {
+const App = async ({params}: AppProps) => {
     const session = await auth();
     if (!session) {
         notFound();
     }
 
-    const locale = (await props.params)?.locale ?? locales.defaultLocale.id
+    const {locale} = await params
     const d = await getDictionary(locale)
 
     return (
@@ -65,18 +64,11 @@ const App = async (props: AppProps) => {
                     </Breadcrumb>
                 </div>
             </header>
-            <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
-                <div className="grid auto-rows-min gap-4 md:grid-cols-3">Uploads</div>
-                <div className="min-h-[100vh] flex-1 rounded-xl bg-muted/50 md:min-h-min">
-                    <UploadButton>
-                        Upload <CloudUpload/>
-                    </UploadButton>
-                </div>
-            </div>
             <Checkout locale={locale} title={d.app.checkout.action.promptComplete}
                       path={`/${locale}/api/stripe/checkout/sessions`}/>
         </>
     );
 };
+
 
 export default App;

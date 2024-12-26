@@ -123,6 +123,27 @@ export const config: Config = {
                 'html': {
                     'scroll-padding-top': 'var(--navbar-height)',
                 },
+                // scrollbar styles
+                '*::-webkit-scrollbar': {
+                    'width': '10px',
+                    'height': '10px',
+                },
+                '*::-webkit-scrollbar-track': {
+                    'background': 'hsl(var(--secondary))',
+                    'border-radius': '6px',
+                },
+                '*::-webkit-scrollbar-thumb': {
+                    'background': 'hsl(var(--muted-foreground))',
+                    'border-radius': '6px',
+                    'border': '2px solid hsl(var(--secondary))',
+                },
+                '*::-webkit-scrollbar-thumb:hover': {
+                    'background': 'hsl(var(--foreground))',
+                },
+                '*': {
+                    'scrollbar-width': 'thin',
+                    'scrollbar-color': 'hsl(var(--muted-foreground)) hsl(var(--secondary))',
+                },
             });
         }),
     ],
